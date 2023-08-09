@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homelabs on The IT Service github.io</title>
+    <link>https://henrynguyenattheitservice.github.io/homelab/</link>
+    <description>Recent content in Homelabs on The IT Service github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 May 2023 15:55:22 +1000</lastBuildDate><atom:link href="https://henrynguyenattheitservice.github.io/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bitbucket</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/bitbucket/bitbucket/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/bitbucket/bitbucket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dns</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/dns/dns/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/dns/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gitlabserver</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/gitslaberver/gitlabserver/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/gitslaberver/gitlabserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gitserver</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/gitserver/gitserver/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/gitserver/gitserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Homelab</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/homelab/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/homelab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jira</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/jira/jira/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/jira/jira/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mailserver</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/mailserver/mailserver/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/mailserver/mailserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nextcloud</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/nextcloud/nextcloud/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/nextcloud/nextcloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Website</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/website/website/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/website/website/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
