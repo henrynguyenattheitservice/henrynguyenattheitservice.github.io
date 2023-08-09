@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The IT Service github.io</title>
+    <link>https://henrynguyenattheitservice.github.io/</link>
+    <description>Recent content on The IT Service github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Jul 2023 18:06:01 +1000</lastBuildDate><atom:link href="https://henrynguyenattheitservice.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Temporal Skill</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/temporalskill/</link>
+      <pubDate>Tue, 04 Jul 2023 18:06:01 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/temporalskill/</guid>
+      <description>Introduction # Finite State Machine and/or Workflow provides the deterministic paradigm to the software application development. Temporal addresses the Workflow part of the paradigm. Hopefully Temporal also addresses the Finite State Machine part of the paradigm. Let research into the technologies to find out if one could start with:
+The Workflow specification to the Temporal framework OR The Finite State Machine specification to the Temporal framework Further study into few internet pointers, It seems that TO-DO must be required to see how FSM and Temporal Workflow Temporal Cluster # At the heart of the Temporal framework is the cluster.</description>
+    </item>
+    
+    <item>
+      <title>Commercial Projects</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/projects/</link>
+      <pubDate>Fri, 09 Jun 2023 13:14:03 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/projects/</guid>
+      <description>Introduction # Commercial projects are classified into:
+Java Projects Infrastructure Projects Cloud solution Projects Java Projects # Modini for Telstra @Unico/CGI # Enhanced the existing Service Assurance Management System supporting from 3G and 4G to 5G and 5G SA mobile services using Java7/J2EE with JSF/Javarscript/Groovy for the FrontEnd and JBoss/EJB/JMS/SOAP/CLI over SSH to interface to Mediator Devices. The persistent storage is MySQL.
+Mobile Prepaid and Postpaid Mobile Service Migration for TPG @Unico/CGI # Enhanced the existing Phase-1 Prepaid mobile service migration to support Postpaid as well using Java8 Batch Spring Boot v2 and Red Hat Camel v2 to interface to the Oracle database running as a docker and Matrixx using JMS.</description>
+    </item>
+    
+    <item>
+      <title>Proof Of Concept and Research Projects</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/pocs/</link>
+      <pubDate>Fri, 09 Jun 2023 13:13:51 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/pocs/</guid>
+      <description>Introduction # Here are the main categories to be developed as Proof of Concept or Research (Hypotheses/Experiments/Results)
+Java/Go/Python Projects Infrastructure Projects Cloud solution Projects Finite State Machine with Xstate and Typescript, Java, Python # Research on various techniques on how to develop application suing Finite State Machine.
+Finite State Machine # State machine is a concept used for designing complex system
+State Machine parts are: States, Events, Initial State, Transitions, Final State.</description>
+    </item>
+    
+    <item>
+      <title>Grpc Skill</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/grpc-skill/</link>
+      <pubDate>Mon, 29 May 2023 12:02:32 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/grpc-skill/</guid>
+      <description>Introduction # Hi everyone!
+Here are some thoughts on the solution for protobuf and gRPC:
+Set the Development Environment for
+Java: we start to setup the Java DevEnv to build up the confidence and know-how. The reasons are that we know Java Development come with two structures of building application MAVEN and GRADLE. We need to feel how gRPC works in the Java DevEnv. Refer to the URL link for detailed notes.</description>
+    </item>
+    
+    <item>
+      <title>Java Skill (draft)</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/java-skill/</link>
+      <pubDate>Mon, 22 May 2023 13:23:42 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/java-skill/</guid>
+      <description>GitHub Referece
+Development Environment # The Java Development Environment is setup as follows:
+We use IntelliJ IDEA as the primary Integrated Development Environment tool.
+IntelliJ IDEA with Git Servers: to connect to Git Server,GitLab Server, Bitbucket and Github IntelliJ IDEA with Git: to manage Code Control - Local and Remote Git activities. IntelliJ IDEA Debug: to debug and learn everything about Golang IntelliJ IDEA Remote Debug: to remote debug to diagnose code issues and defects in the integration IntelliJ IDEA and Docker Desktop as an Integrated Development Environment: to create the development environment using Docker and Kubernetes e.</description>
+    </item>
+    
+    <item>
+      <title>leshan Application / Iot Application / Mobile Application Skill (draft)</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/leshanapp-iotapp-mobileapp-skill/</link>
+      <pubDate>Mon, 22 May 2023 13:23:42 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/leshanapp-iotapp-mobileapp-skill/</guid>
+      <description>Use Cases # Here are the summary of the solution and standards for CoAP, LwM2M and IPSO:
+Solution &amp;amp; Standard to Support CoAP # Device and Protocol to work in a constraint environment – CoAP Constraint of Application Protocol Protocol operates s constraint resources, e.g. Power devices run using battery or Transmit data in an Intermittent and narrow band. CoAP protocol is a Restful-like API with Restful response code Operate in various protocol stacks, UDP/DTLS, TCP/TLS and Websocket, SMS and MQTT Message encodes/decoded and transported between devices using CBOR Concise Binary Object, Text, TLV, JSON</description>
+    </item>
+    
+    <item>
+      <title>Springboot Skill (under-construction)</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/springboot-skill/</link>
+      <pubDate>Mon, 22 May 2023 13:23:42 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/springboot-skill/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yocto Skill (draft)</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/yocto-skill/</link>
+      <pubDate>Mon, 22 May 2023 13:23:42 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/yocto-skill/</guid>
+      <description>Introduction # Hi everyone, here are my thoughts in my mind when I study about Yocto/OpenEmbedded on one of projects
+Design the system with High Available solution in mind. That is: We ensure the system is designed and operated with dual power supplies. Power if possible we should use N+1 System diagram is on the way We need to have an integrated solution in mind. For example one vehicle view may not be assisted the total solution when combining with many vehicle views (vehicle ~ tank or vehicle ~ boat/ship etc&amp;hellip;i.</description>
+    </item>
+    
+    <item>
+      <title>Bitbucket</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/bitbucket/bitbucket/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/bitbucket/bitbucket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dns</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/dns/dns/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/dns/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gitlabserver</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/gitslaberver/gitlabserver/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/gitslaberver/gitlabserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gitserver</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/gitserver/gitserver/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/gitserver/gitserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Homelab</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/homelab/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/homelab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Homelab Skill (draft)</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/homelab-skill/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/homelab-skill/</guid>
+      <description>[My Home Lab] # We setup the Development Environment for homelab.
+On the internet facing we allow for the following traffic to transport to and from internet:
+Mail - POP/POPS, IMAP/IMAPS, SMTP/SMTPS Leshan - Bootstrap and Device Management Web - HTTP/HTTPS Bastion Host - SSH/SFTP Github via SSH and HTTPS Next Cloud -TBD Code Control Service
+Git Server GitLab Server Bitbuck Server JIRA Server DNS Service
+Bind9 Mail Service</description>
+    </item>
+    
+    <item>
+      <title>Jira</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/jira/jira/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/jira/jira/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mailserver</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/mailserver/mailserver/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/mailserver/mailserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nextcloud</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/nextcloud/nextcloud/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/nextcloud/nextcloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Website</title>
+      <link>https://henrynguyenattheitservice.github.io/homelab/website/website/</link>
+      <pubDate>Wed, 17 May 2023 15:55:22 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/homelab/website/website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo Skill (draft)</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/hugo-skill/</link>
+      <pubDate>Wed, 17 May 2023 15:45:24 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/hugo-skill/</guid>
+      <description>Study # Training courses that I have studied and learned in the Github, Linkedin, Udemy, and Youtube; I also setup the Development Environment for hugo.
+The objective of the study is to
+Set up the tool set used for the hugo Development Set up the tool set used to maintain, operate and administer my website and other projects Set up the development environment to use docker and kubernetes whenever possible thus allowing an integration from Development, Testing, Pre-Production and Production.</description>
+    </item>
+    
+    <item>
+      <title>Golang Skill (draft)</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/golang-skill/</link>
+      <pubDate>Tue, 16 May 2023 16:21:26 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/golang-skill/</guid>
+      <description>GitHub Referece
+Development Environment # The Golang Development Environment is setup as follows:
+We use GoLand as the primary Integrated Development Environment tool.
+GoLand with Git Servers: to connect to Git Server,GitLab Server, Bitbucket and Github GoLand with Git: to manage Code Control - Local and Remote Git activities. GoLand Debug: to debug and learn everything about Golang GoLand Remote Debug: to remote debug to diagnose code issues and defects in the integration GoLand and Docker Desktop as an Integrated Development Environment: to create the development environment using Docker and Kubernetes e.</description>
+    </item>
+    
+    <item>
+      <title>3 Holy Trinities (draft)</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/3-holy-trinities/</link>
+      <pubDate>Tue, 16 May 2023 14:30:31 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/3-holy-trinities/</guid>
+      <description> Architecture # TMN &amp;amp; CCiTT # SNMP &amp;amp; IETF # CoAP/LwM2M/IPSO &amp;amp; OMA # Any Architectures with Business Logic to be implemented using Finite State Machine # Event Driven Architecture # Monolithic Architecture # Domain Driven Architecture # Hexagon Driven Architecture # Data and Business Logic Modelling # TMN &amp;amp; CCiTT with M3xxxx-MIB # SNMP &amp;amp; IETF with RFC-MIB # OMA with IPSO for LwM2M and IPSO for Business Logic # Methodology # Process # Development Environment &amp;amp; Tools # DevOps Environment &amp;amp; Tools # CICD Tools # </description>
+    </item>
+    
+    <item>
+      <title>Home (draft)</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/home/</link>
+      <pubDate>Tue, 16 May 2023 14:30:31 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/home/</guid>
+      <description>Here are the summary of the solution and standards for CoAP, LwM2M and IPSO:
+Solution &amp;amp; Standard to Support CoAP # Device and Protocol to work in a constraint environment – CoAP Constraint of Application Protocol
+Protocol operates s constraint resources, e.g. Power devices run using battery or Transmit data in an Intermittent and narrow band. CoAP protocol is a Restful-like API with Restful response code Operate in various protocol stacks, UDP/DTLS, TCP/TLS and Websocket, SMS and MQTT Message encodes/decoded and transported between devices using CBOR Concise Binary Object, Text, TLV, JSON Solution and Standard to support LwM2M # Device Communication with its Management System – LwM2M Light Weight Machine to Machine Protocol – engineered on the “wisdom” of machine to machine interface</description>
+    </item>
+    
+    <item>
+      <title>Profile</title>
+      <link>https://henrynguyenattheitservice.github.io/about/</link>
+      <pubDate>Tue, 16 May 2023 11:41:52 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/about/</guid>
+      <description>Please note that I am in the process to consolidate my study, working knowledge and/or wisdom into my blog as at last 3 decades I have rushed from company to another and from one project to another to deliver the outcomes.
+It might take some time for me to complete the blog with old and new articles.
+Thank you for visiting my blog and your understanding.
+Personal Details # Website: theitservice.</description>
+    </item>
+    
+  </channel>
+</rss>
