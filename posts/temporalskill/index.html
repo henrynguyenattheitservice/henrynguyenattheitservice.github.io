@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction # Finite State Machine and/or Workflow provides the deterministic paradigm to the software application development. Temporal addresses the Workflow part of the paradigm. Hopefully Temporal also addresses the Finite State Machine part of the paradigm. Let research into the technologies to find out if one could start with:
+The Workflow specification to the Temporal framework OR The Finite State Machine specification to the Temporal framework Further study into few internet pointers, It seems that TO-DO must be required to see how FSM and Temporal Workflow Temporal Cluster # At the heart of the Temporal framework is the cluster.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Temporal Skill" />
+<meta property="og:description" content="Introduction # Finite State Machine and/or Workflow provides the deterministic paradigm to the software application development. Temporal addresses the Workflow part of the paradigm. Hopefully Temporal also addresses the Finite State Machine part of the paradigm. Let research into the technologies to find out if one could start with:
+The Workflow specification to the Temporal framework OR The Finite State Machine specification to the Temporal framework Further study into few internet pointers, It seems that TO-DO must be required to see how FSM and Temporal Workflow Temporal Cluster # At the heart of the Temporal framework is the cluster." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrynguyenattheitservice.github.io/posts/temporalskill/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-04T18:06:01+10:00" />
+<meta property="article:modified_time" content="2023-07-04T18:06:01+10:00" />
+<title>Temporal Skill | The IT Service github.io</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.6ddb36d39493a019c43b8bf9aa53e21b05848416ce7d1f9ba9d143b44574bdc9.js" integrity="sha256-bds205SToBnEO4v5qlPiGwWEhBbOfR&#43;bqdFDtEV0vck=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>The IT Service github.io</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/about/"  target="_blank" rel="noopener">
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="/homelab/"  target="_blank" rel="noopener">
+        Homelab
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Temporal Skill</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#temporal-clustertemporaltemporalcluster"><a href="/temporal/temporalcluster">Temporal Cluster</a></a></li>
+    <li><a href="#temporal-litetemporaltemporallite"><a href="/temporal/temporallite">Temporal Lite</a></a></li>
+    <li><a href="#temporal-apitemporaltemporalapi"><a href="/temporal/temporalapi">Temporal API</a></a>
+      <ul>
+        <li><a href="#grpc-services-sepecifies-in-the-protobuf-files">gRPC Services sepecifies in the protobuf files.</a></li>
+      </ul>
+    </li>
+    <li><a href="#temporallite-databasetemporaltemporaldb"><a href="/temporal/temporaldb">TemporalLite Database</a></a></li>
+    <li><a href="#java-sdktemporaljavasdk"><a href="/temporal/javasdk">Java-SDK</a></a></li>
+    <li><a href="#temporal-java-sdk">Temporal Java-SDK</a>
+      <ul>
+        <li><a href="#step1-code-generation-all-the-prootbuf-and-grpc-serviice-using-jetbrains-intellij">Step1: Code generation all the prootbuf and gRPC serviice using JetBrains IntelliJ</a></li>
+        <li><a href="#step2-study-temporal-building-block-or-components">Step2: Study Temporal Building Block or Components</a></li>
+        <li><a href="#step3-debug-temporalite-together-with-running-helloworld-sample">Step3: Debug Temporalite together with Running HelloWorld sample</a></li>
+      </ul>
+    </li>
+    <li><a href="#go-sdktemporalgosdk"><a href="/temporal/gosdk">Go-SDK</a></a></li>
+    <li><a href="#typescript-sdktemporaltypescriptsdk"><a href="/temporal/typescriptsdk">Typescript-SDK</a></a></li>
+    <li><a href="#python-sdktemporalpythonsdk"><a href="/temporal/pythonsdk">Python-SDK</a></a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/temporalskill/">Temporal Skill</a>
+  </h1>
+  
+  <h5>July 4, 2023</h5>
+
+
+
+  
+
+  
+  <div>
+    
+      <a href="/tags/untagged/">untagged</a>
+  </div>
+  
+
+
+
+<h1 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h1>
+<p>Finite State Machine and/or Workflow provides the deterministic paradigm to the software application development.
+Temporal addresses the Workflow part of the paradigm. Hopefully Temporal also addresses the Finite State Machine part of the paradigm. Let research into the technologies to find out if one could start with:</p>
+<ul>
+<li>The Workflow specification to the Temporal framework
+OR</li>
+<li>The Finite State Machine specification to the Temporal framework
+<a href="https://community.temporal.io/t/possible-to-implement-finite-state-machine-using-workflows/2847/15">Further study into few internet pointers, It seems that TO-DO must be required to see how FSM and Temporal Workflow</a></li>
+</ul>
+<h2 id="temporal-clustertemporaltemporalcluster">
+  <a href="/temporal/temporalcluster">Temporal Cluster</a>
+  <a class="anchor" href="#temporal-clustertemporaltemporalcluster">#</a>
+</h2>
+<p>At the heart of the Temporal framework is the cluster. It provides the deterministic mechanism to the workflow using kafka and g- rpc //TO-DO further study required.
+The Temporal cluster can be run as</p>
+<ul>
+<li>Standalone process
+<ul>
+<li>For Mac</li>
+</ul>
+</li>
+</ul>
+<pre tabindex="0"><code>brew install temporal 
+OR
+curl -sSf https://temporal.download/cli.sh | sh
+temporal server start-dev
+For a full list of options, run:
+temporal server start-dev --help
+</code></pre><p>The Temporal Server should be available on localhost:7233 and the Temporal Web UI should be accessible at http://localhost:8233.</p>
+<ul>
+<li>For Linux (To be added)</li>
+<li>For Windows (To be added)</li>
+<li>Docker/Kubernetes: prefer method to run Temporal cluster
+More to find out at <a href="https://docs.temporal.io/kb/all-the-ways-to-run-a-cluster#:~:text=You%20can%20easily%20run%20a,up%20command%20from%20its%20root.">here</a></li>
+</ul>
+<h2 id="temporal-litetemporaltemporallite">
+  <a href="/temporal/temporallite">Temporal Lite</a>
+  <a class="anchor" href="#temporal-litetemporaltemporallite">#</a>
+</h2>
+<p>Reference 1 <a href="https://keithtenzer.com/temporal/temporal_getting_started_guide/">Temporal Getting Started Guide</a>
+<img src="../../static/images/temporal/TemporaliteGoland.png" alt="Temporal Lite and GoLand" title="Temporal Lite and GoLand"/>
+The objectives to run Temporalite with the ability to debug using JetBrains GoLand:</p>
+<ul>
+<li>To understand how various temporal components work together</li>
+<li>To run the temporalite as docker (We still think to run it as temporalite docker as part of the development)</li>
+<li>To debug the application development</li>
+<li>To perform integration test during the development</li>
+<li>etc&hellip;</li>
+</ul>
+<h2 id="temporal-apitemporaltemporalapi">
+  <a href="/temporal/temporalapi">Temporal API</a>
+  <a class="anchor" href="#temporal-apitemporaltemporalapi">#</a>
+</h2>
+<p><img src="../../static/images/temporal/TemporalAPI.png" alt="Temporal Cluster" title="Temporal Cluster"/></p>
+<p>[Temporal API Github] (<a href="https://github.com/henrynguyenattheitservice/temporal-api-java.git">https://github.com/henrynguyenattheitservice/temporal-api-java.git</a>)</p>
+<h3 id="grpc-services-sepecifies-in-the-protobuf-files">
+  gRPC Services sepecifies in the protobuf files.
+  <a class="anchor" href="#grpc-services-sepecifies-in-the-protobuf-files">#</a>
+</h3>
+<p>We build the temporal API using JetBrains IntelliJ and JetBrains GoLand and see how the generated code used in the development of Java-SDK and Go-SDK.
+The objectives of the TemporalAPI are</p>
+<ul>
+<li>To understand the SDK Wrapper</li>
+<li>To understand the Temporal Server activities via debugging the Temporalite using JetBrains GoLand</li>
+<li>etc&hellip;</li>
+</ul>
+<h2 id="temporallite-databasetemporaltemporaldb">
+  <a href="/temporal/temporaldb">TemporalLite Database</a>
+  <a class="anchor" href="#temporallite-databasetemporaltemporaldb">#</a>
+</h2>
+<p><img src="../../static/images/temporal/TemporalDBschema.png" alt="Temporal UI" title="Temporal Database Schema"/>
+<img src="../../static/images/temporal/TemporalUI.png" alt="Temporal Database Schema" title="Temporal UI"/>
+The objectives of the Temporal Database are</p>
+<ul>
+<li>To understand the data and/or information are being persisted</li>
+<li>To understand the data and/or information are being persisted when the temporal server crashes and recoveries</li>
+<li>etc&hellip;</li>
+</ul>
+<h2 id="java-sdktemporaljavasdk">
+  <a href="/temporal/javasdk">Java-SDK</a>
+  <a class="anchor" href="#java-sdktemporaljavasdk">#</a>
+</h2>
+<p>DevEnv with JetBrains IntelliJ with Gradle OR Maven</p>
+<ul>
+<li>Reference 1 DevEnv &ldquo;<a href="https://learn.temporal.io/getting_started/java/dev_environment/?build-tool=gradle">Set up a local development environment for Temporal and Java</a>&rdquo;</li>
+<li>Reference 2 &ldquo;<a href="https://learn.temporal.io/getting_started/java/first_program_in_java/">Run your first Temporal application with the Java SDK</a>&rdquo;</li>
+<li>Reference 3 &ldquo;<a href="https://learn.temporal.io/getting_started/java/hello_world_in_java/">Build a Temporal Application from scratch in Java</a>&rdquo;</li>
+</ul>
+<h2 id="temporal-java-sdk">
+  Temporal Java-SDK
+  <a class="anchor" href="#temporal-java-sdk">#</a>
+</h2>
+<p><img src="../../static/images/temporal/TemporalJavaSDK.png" alt="Temporal Cluster" title="Temporal Cluster"/></p>
+<h3 id="step1-code-generation-all-the-prootbuf-and-grpc-serviice-using-jetbrains-intellij">
+  Step1: Code generation all the prootbuf and gRPC serviice using JetBrains IntelliJ
+  <a class="anchor" href="#step1-code-generation-all-the-prootbuf-and-grpc-serviice-using-jetbrains-intellij">#</a>
+</h3>
+<h3 id="step2-study-temporal-building-block-or-components">
+  Step2: Study Temporal Building Block or Components
+  <a class="anchor" href="#step2-study-temporal-building-block-or-components">#</a>
+</h3>
+<h4 id="workflow">
+  Workflow
+  <a class="anchor" href="#workflow">#</a>
+</h4>
+<h4 id="worker">
+  Worker
+  <a class="anchor" href="#worker">#</a>
+</h4>
+<h4 id="client">
+  Client
+  <a class="anchor" href="#client">#</a>
+</h4>
+<h4 id="saga">
+  Saga
+  <a class="anchor" href="#saga">#</a>
+</h4>
+<h3 id="step3-debug-temporalite-together-with-running-helloworld-sample">
+  Step3: Debug Temporalite together with Running HelloWorld sample
+  <a class="anchor" href="#step3-debug-temporalite-together-with-running-helloworld-sample">#</a>
+</h3>
+<h4 id="run-temporalite-in-the-goland-debug-mode">
+  Run Temporalite in the Goland debug mode
+  <a class="anchor" href="#run-temporalite-in-the-goland-debug-mode">#</a>
+</h4>
+<h4 id="run-helloworld-workflow-and-activity-in-the-intellij">
+  Run HelloWorld workflow and activity in the IntelliJ
+  <a class="anchor" href="#run-helloworld-workflow-and-activity-in-the-intellij">#</a>
+</h4>
+<h2 id="go-sdktemporalgosdk">
+  <a href="/temporal/gosdk">Go-SDK</a>
+  <a class="anchor" href="#go-sdktemporalgosdk">#</a>
+</h2>
+<p>DevEnv with JetBrains Goland with Makefile</p>
+<ul>
+<li>Reference 1 DevEnv &ldquo;<a href="https://learn.temporal.io/getting_started/go/dev_environment/">Set up a local development environment for Temporal and Go</a>&rdquo;</li>
+<li>Reference 2 &ldquo;<a href="https://learn.temporal.io/getting_started/go/first_program_in_go/">Run your first Temporal application with the Go SDK</a>&rdquo;</li>
+<li>Reference 3 &ldquo;<a href="https://learn.temporal.io/getting_started/go/hello_world_in_go/">Build a Temporal Application from scratch in Go</a>&rdquo;</li>
+</ul>
+<h2 id="typescript-sdktemporaltypescriptsdk">
+  <a href="/temporal/typescriptsdk">Typescript-SDK</a>
+  <a class="anchor" href="#typescript-sdktemporaltypescriptsdk">#</a>
+</h2>
+<p>DevEnv with JetBrains WebStorm</p>
+<ul>
+<li>Reference 1 DevEnv &ldquo;<a href="https://learn.temporal.io/getting_started/typescript/hello_world_in_typescript/">Build a Temporal Application from scratch in TypeScript</a>&rdquo;</li>
+<li>Reference 2 &ldquo;<a href="https://learn.temporal.io/getting_started/typescript/hello_world_in_typescript/">Build a Temporal Application from scratch in TypeScript</a>&rdquo;</li>
+</ul>
+<h2 id="python-sdktemporalpythonsdk">
+  <a href="/temporal/pythonsdk">Python-SDK</a>
+  <a class="anchor" href="#python-sdktemporalpythonsdk">#</a>
+</h2>
+<p>DevEnv with JetBrains PyCharm</p>
+<ul>
+<li>Reference 1 &ldquo;<a href="https://learn.temporal.io/getting_started/python/dev_environment/">Set up a local development environment for Temporal and Python</a>&rdquo;</li>
+<li>Reference 2 &ldquo;<a href="https://learn.temporal.io/getting_started/python/hello_world_in_python/">Build a Temporal Application from scratch in Python</a>&rdquo;</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#temporal-clustertemporaltemporalcluster"><a href="/temporal/temporalcluster">Temporal Cluster</a></a></li>
+    <li><a href="#temporal-litetemporaltemporallite"><a href="/temporal/temporallite">Temporal Lite</a></a></li>
+    <li><a href="#temporal-apitemporaltemporalapi"><a href="/temporal/temporalapi">Temporal API</a></a>
+      <ul>
+        <li><a href="#grpc-services-sepecifies-in-the-protobuf-files">gRPC Services sepecifies in the protobuf files.</a></li>
+      </ul>
+    </li>
+    <li><a href="#temporallite-databasetemporaltemporaldb"><a href="/temporal/temporaldb">TemporalLite Database</a></a></li>
+    <li><a href="#java-sdktemporaljavasdk"><a href="/temporal/javasdk">Java-SDK</a></a></li>
+    <li><a href="#temporal-java-sdk">Temporal Java-SDK</a>
+      <ul>
+        <li><a href="#step1-code-generation-all-the-prootbuf-and-grpc-serviice-using-jetbrains-intellij">Step1: Code generation all the prootbuf and gRPC serviice using JetBrains IntelliJ</a></li>
+        <li><a href="#step2-study-temporal-building-block-or-components">Step2: Study Temporal Building Block or Components</a></li>
+        <li><a href="#step3-debug-temporalite-together-with-running-helloworld-sample">Step3: Debug Temporalite together with Running HelloWorld sample</a></li>
+      </ul>
+    </li>
+    <li><a href="#go-sdktemporalgosdk"><a href="/temporal/gosdk">Go-SDK</a></a></li>
+    <li><a href="#typescript-sdktemporaltypescriptsdk"><a href="/temporal/typescriptsdk">Typescript-SDK</a></a></li>
+    <li><a href="#python-sdktemporalpythonsdk"><a href="/temporal/pythonsdk">Python-SDK</a></a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

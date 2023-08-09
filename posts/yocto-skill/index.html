@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction # Hi everyone, here are my thoughts in my mind when I study about Yocto/OpenEmbedded on one of projects
+Design the system with High Available solution in mind. That is: We ensure the system is designed and operated with dual power supplies. Power if possible we should use N&#43;1 System diagram is on the way We need to have an integrated solution in mind. For example one vehicle view may not be assisted the total solution when combining with many vehicle views (vehicle ~ tank or vehicle ~ boat/ship etc&hellip;i.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Yocto Skill (draft)" />
+<meta property="og:description" content="Introduction # Hi everyone, here are my thoughts in my mind when I study about Yocto/OpenEmbedded on one of projects
+Design the system with High Available solution in mind. That is: We ensure the system is designed and operated with dual power supplies. Power if possible we should use N&#43;1 System diagram is on the way We need to have an integrated solution in mind. For example one vehicle view may not be assisted the total solution when combining with many vehicle views (vehicle ~ tank or vehicle ~ boat/ship etc&hellip;i." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrynguyenattheitservice.github.io/posts/yocto-skill/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-22T13:23:42+10:00" />
+<meta property="article:modified_time" content="2023-05-22T13:23:42+10:00" />
+<title>Yocto Skill (draft) | The IT Service github.io</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.6ddb36d39493a019c43b8bf9aa53e21b05848416ce7d1f9ba9d143b44574bdc9.js" integrity="sha256-bds205SToBnEO4v5qlPiGwWEhBbOfR&#43;bqdFDtEV0vck=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>The IT Service github.io</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/about/"  target="_blank" rel="noopener">
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="/homelab/"  target="_blank" rel="noopener">
+        Homelab
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Yocto Skill (draft)</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#training">Training</a>
+      <ul>
+        <li><a href="#udemy">Udemy</a></li>
+        <li><a href="#linkedin">Linkedin</a></li>
+        <li><a href="#youtube">Youtube</a></li>
+      </ul>
+    </li>
+    <li><a href="#projects">Projects</a>
+      <ul>
+        <li><a href="#develop-the-embedded-linux-os-to-run-the-yoctoopenembededraspberry-pi--docker">Develop the Embedded Linux OS to run the Yocto/Openembeded/Raspberry Pi  Docker</a></li>
+        <li><a href="#deploy-adlinkvortex-dds-docker-to-rasberrypi4">Deploy ADLINK/VORTEX DDS Docker to RasberryPi4</a></li>
+        <li><a href="#develop-the-development-environment-to-allow-the-developers-to-develop-the-embedded-application-using-docker">Develop the Development Environment to allow the Developers to develop the Embedded application using Docker</a></li>
+      </ul>
+    </li>
+    <li><a href="#study">Study</a></li>
+    <li><a href="#qemu-project">QEMU project</a></li>
+    <li><a href="#raspberry-pi-project">Raspberry PI project</a></li>
+    <li><a href="#rasberry-pi-with-docker-project">Rasberry PI with Docker project</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/yocto-skill/">Yocto Skill (draft)</a>
+  </h1>
+  
+  <h5>May 22, 2023</h5>
+
+
+
+  
+
+  
+  <div>
+    
+      <a href="/tags/untagged/">untagged</a>
+  </div>
+  
+
+
+
+<h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>Hi everyone, here are my thoughts in my mind when I study about Yocto/OpenEmbedded on one of projects</p>
+<ul>
+<li>Design the system with High Available solution in mind. That is:
+<ul>
+<li>We ensure the system is designed and operated with dual power supplies.</li>
+<li>Power if possible we should use N+1</li>
+<li>System diagram is on the way</li>
+</ul>
+</li>
+<li>We need to have an integrated solution in mind. For example one vehicle view may not be assisted the total solution when combining with many vehicle views (vehicle ~ tank or vehicle ~ boat/ship etc&hellip;i.e. we can not win the battle with the view of one vehicle but we can have a better opportunity to win the battle when all views are combined)</li>
+<li>Design the OS running on the read only the partition where the filesystem is configured to read only. That is the Yocto/OpenEmbedded OS is loaded to the readonly filesystem partition. By doing so we will less likely to brick the system.</li>
+<li>Use the docker to develop the application in the cross the platform - cross compilation - need to proven and test out more. By doing so we can constantly testing out the application and develop application using more power laptop and PC.</li>
+<li>Please note that we still perform firmware upgrade in two approaches - this is the approach I learn when working in the data centre as we dont often upgrade the OS but we constantly upgrade the application:
+<ul>
+<li>Total upgrade both OS (Yocto/OpenEmbedded) and application (docker)</li>
+<li>Application upgrade Constantly upgrade with application patches even though we are in testing, preproduction and production (if it is safe to do so).</li>
+</ul>
+</li>
+</ul>
+<h2 id="training">
+  Training
+  <a class="anchor" href="#training">#</a>
+</h2>
+<h3 id="udemy">
+  Udemy
+  <a class="anchor" href="#udemy">#</a>
+</h3>
+<ul>
+<li><a href="https://www.udemy.com/course-dashboard-redirect/?course_id=3221489">Embedded Linux using Yocto Part 1</a></li>
+<li><a href="https://www.udemy.com/course-dashboard-redirect/?course_id=3476258"> Embedded Linux using Yocto Part 2</a></li>
+<li><a href="https://www.udemy.com/course-dashboard-redirect/?course_id=3653898"> Embedded Linux using Yocto Part 3</a></li>
+<li><a href="https://www.udemy.com/course-dashboard-redirect/?course_id=3842940"> Embedded Linux using Yocto Part 4</a></li>
+<li><a href="https://www.udemy.com/course-dashboard-redirect/?course_id=1799326">Learn Embedded Linux using Yocto Prject</a></li>
+<li><a href="https://www.udemy.com/course-dashboard-redirect/?course_id=533004">Makefile and GNU make C/C++ on Linux</a></li>
+</ul>
+<h3 id="linkedin">
+  Linkedin
+  <a class="anchor" href="#linkedin">#</a>
+</h3>
+<p>NA</p>
+<h3 id="youtube">
+  Youtube
+  <a class="anchor" href="#youtube">#</a>
+</h3>
+<p>NA</p>
+<h2 id="projects">
+  Projects
+  <a class="anchor" href="#projects">#</a>
+</h2>
+<h3 id="develop-the-embedded-linux-os-to-run-the-yoctoopenembededraspberry-pi--docker">
+  Develop the Embedded Linux OS to run the Yocto/Openembeded/Raspberry Pi  Docker
+  <a class="anchor" href="#develop-the-embedded-linux-os-to-run-the-yoctoopenembededraspberry-pi--docker">#</a>
+</h3>
+<h3 id="deploy-adlinkvortex-dds-docker-to-rasberrypi4">
+  Deploy ADLINK/VORTEX DDS Docker to RasberryPi4
+  <a class="anchor" href="#deploy-adlinkvortex-dds-docker-to-rasberrypi4">#</a>
+</h3>
+<h3 id="develop-the-development-environment-to-allow-the-developers-to-develop-the-embedded-application-using-docker">
+  Develop the Development Environment to allow the Developers to develop the Embedded application using Docker
+  <a class="anchor" href="#develop-the-development-environment-to-allow-the-developers-to-develop-the-embedded-application-using-docker">#</a>
+</h3>
+<h2 id="study">
+  Study
+  <a class="anchor" href="#study">#</a>
+</h2>
+<ul>
+<li>Toolchain: Compiler and other tools used to create code for the target device</li>
+<li>Bootloader: Program that initialises the IC board and loads the Linux kernel</li>
+<li>Kernel: manage resources and interfaces with the hardware</li>
+<li>Root filesystem: contains libraries and programs that are run once
+the kernel has completed its initialisation. It is recommended that
+<ul>
+<li>the kernel or Operating System is kept on the Read-Only filesystem thus minimising the device is being bricked and</li>
+<li>the Application is kept on the Read-Write filesystem thus optimising the application is being loaded and maintained continuously during the development and deployment.
+It is similar concept and it is important “when we operate and maintain the Data Centre where we operate and maintain the Operating System releases less frequently than we operate and maintain the Application more frequently with continuous deployment thus leading to the docker delivery in the embedded linux or firmware”.</li>
+</ul>
+</li>
+<li>What is Yocto: Yocto is a project provides open source founded in 2010 to allow the developers to create their own custom Linux distributions for any hardware architecture. It is formed by collaborate:
+<ul>
+<li>
+<p>Hardware manufacturers and Electronics companies</p>
+</li>
+<li>
+<p>Open Source for Linux Operating Systems thus forming the working group of Linux foundation</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>We specify the Input and Output for the Yocto project as follows:</p>
+<ul>
+<li>Input: Set of data that describes what we want, that is our specification (Kernel Configuration, Hardware Name, Packages/Binaries to be installed)</li>
+<li>Output: Linux Based Embedded Product (Linux Kernel, Root File System, Bootloader, Device Tree, Toolchain)</li>
+</ul>
+<p>Platform prerequisites to build the Yocto project(s).</p>
+<ul>
+<li>Software Ubuntu 20.04.6</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ lsb_release -a
+</span></span><span style="display:flex;"><span>No LSB modules are available.
+</span></span><span style="display:flex;"><span>Distributor ID: Ubuntu
+</span></span><span style="display:flex;"><span>Description: Ubuntu 20.04.6 LTS
+</span></span><span style="display:flex;"><span>Release: 20.04
+</span></span><span style="display:flex;"><span>Codename: focal
+</span></span><span style="display:flex;"><span>sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    build-essential chrpath socat cpio python python3 python3-pip python3-pexpect <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    pylint3 xterm
+</span></span></code></pre></div><ul>
+<li>
+<p>Others software</p>
+<ul>
+<li>git</li>
+<li>tar</li>
+<li>python3</li>
+</ul>
+</li>
+<li>
+<p>Hardware – I use my Mac Pro with 2 CPUs/6 Cores per CPUs/2 Threads per Core and 64 GB of Memory and Multiple 50 GB (storage per build) as the build can take more than 4 hours</p>
+</li>
+</ul>
+<p>Embedded Linux Releases</p>
+<ul>
+<li>
+<p>Releases 4: 4.0</p>
+<ul>
+<li>Kirkstone/4.1</li>
+<li>Langdale/4.2</li>
+<li>Mickledore/4.3 Nanbield</li>
+</ul>
+</li>
+<li>
+<p>Release 3: 3.0</p>
+<ul>
+<li>Zeus/ 3.1</li>
+<li>Dunfell / 3.2</li>
+<li>atesgarth / 3.3.</li>
+<li>Hardknott / 3.4</li>
+<li>Honister</li>
+</ul>
+</li>
+</ul>
+<p>Other releases refer to <a href="https://wiki.yoctoproject.org/wiki/Releases">https://wiki.yoctoproject.org/wiki/Releases</a></p>
+<h2 id="qemu-project">
+  QEMU project
+  <a class="anchor" href="#qemu-project">#</a>
+</h2>
+<p>Notes on how to configure, build, and run qemu</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir -p ~/projects/qemu/source
+</span></span><span style="display:flex;"><span>$ cd ~/projects/qemu/source
+</span></span><span style="display:flex;"><span>$ git clone git://git.yoctoproject.org/poky
+</span></span><span style="display:flex;"><span>$ git branch --all
+</span></span><span style="display:flex;"><span>$ git checkout langdale
+</span></span><span style="display:flex;"><span>or 
+</span></span><span style="display:flex;"><span>$ git clone -b langdale --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> git://git.yoctoroject.org/poky
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ cd poky
+</span></span><span style="display:flex;"><span>$ git status
+</span></span><span style="display:flex;"><span>$ cd ~/projects/qemu/source 
+</span></span><span style="display:flex;"><span>$ source poky/oe-init-build-env ../build
+</span></span><span style="display:flex;"><span>$ bitbake-layers show-layers
+</span></span><span style="display:flex;"><span>NOTE: Starting bitbake server...
+</span></span><span style="display:flex;"><span>layer                 path                                      priority
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==========================================================================</span>
+</span></span><span style="display:flex;"><span>meta                  /home/hlkn/Desktop/projects/qemu/source/poky/meta          <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-poky             /home/hlkn/Desktop/projects/qemu/source/poky/meta-poky     <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-yocto-bsp        /home/hlkn/Desktop/projects/qemu/source/poky/meta-yocto-bsp  <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><h2 id="raspberry-pi-project">
+  Raspberry PI project
+  <a class="anchor" href="#raspberry-pi-project">#</a>
+</h2>
+<p>Notes to configure, build and run raspberry-pi
+Download and configure correct branch for raspberrypi, meta-openembedded</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir -p ~/projects/rpi/source
+</span></span><span style="display:flex;"><span>$ cd ~/projects/rpi/source
+</span></span><span style="display:flex;"><span>$ git clone git://git.yoctoproject.org/poky
+</span></span><span style="display:flex;"><span>$ git branch --all
+</span></span><span style="display:flex;"><span>$ git checkout langdale
+</span></span><span style="display:flex;"><span>$ git clone git://git.yoctoproject.org/meta-openembeded
+</span></span><span style="display:flex;"><span>$ git branch --all
+</span></span><span style="display:flex;"><span>$ git checkout langdale
+</span></span><span style="display:flex;"><span>$ git clone git://git.yoctoproject.org/meta-rapberrypi
+</span></span><span style="display:flex;"><span>$ git branch --all
+</span></span><span style="display:flex;"><span>$ git checkout langdale
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>or 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ git clone -b langdale --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> git://git.yoctoroject.org/poky
+</span></span><span style="display:flex;"><span>$ git clone -b langdale --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> git://git.yoctoroject.org/openembedded
+</span></span><span style="display:flex;"><span>$ git clone -b langdale --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> git://git.yoctoroject.org/raspberrypi
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ cd poky
+</span></span><span style="display:flex;"><span>$ git status
+</span></span><span style="display:flex;"><span>$ cd ~/projects/rpi/source 
+</span></span><span style="display:flex;"><span>$ source poky/oe-init-build-env ../build
+</span></span><span style="display:flex;"><span>$ bitbake-layers show-layers
+</span></span><span style="display:flex;"><span>NOTE: Starting bitbake server...
+</span></span><span style="display:flex;"><span>layer                 path                                      priority
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==========================================================================</span>
+</span></span><span style="display:flex;"><span>meta                  /home/hlkn/Desktop/projects/rpi/source/poky/meta          <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-poky             /home/hlkn/Desktop/projects/rpi/source/poky/meta-poky     <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-yocto-bsp        /home/hlkn/Desktop/projects/rpi/source/poky/meta-yocto-bsp  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>$ bitbake-layers add-layers
+</span></span><span style="display:flex;"><span>NOTE: Starting bitbake server...
+</span></span><span style="display:flex;"><span>layer                 path                                      priority
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==========================================================================</span>
+</span></span><span style="display:flex;"><span>meta                  /home/hlkn/Desktop/projects/rpi/source/poky/meta          <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-poky             /home/hlkn/Desktop/projects/rpi/source/poky/meta-poky     <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-yocto-bsp        /home/hlkn/Desktop/projects/rpi/source/poky/meta-yocto-bsp  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ bitbake-layers show-layers
+</span></span><span style="display:flex;"><span>NOTE: Starting bitbake server...
+</span></span><span style="display:flex;"><span>layer                 path                                      priority
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==========================================================================</span>
+</span></span><span style="display:flex;"><span>meta                  /home/hlkn/rpi/source/poky/meta           <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-poky             /home/hlkn/rpi/source/poky/meta-poky      <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-yocto-bsp        /home/hlkn/rpi/source/poky/meta-yocto-bsp  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-oe               /home/hlkn/rpi/source/meta-openembedded/meta-oe  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-python           /home/hlkn/rpi/source/meta-openembedded/meta-python  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-networking       /home/hlkn/rpi/source/meta-openembedded/meta-networking  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-multimedia       /home/hlkn/rpi/source/meta-openembedded/meta-multimedia  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-filesystems      /home/hlkn/rpi/source/meta-openembedded/meta-filesystems  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>meta-raspberrypi      /home/hlkn/rpi/source/meta-raspberrypi    <span style="color:#ae81ff">9</span>
+</span></span><span style="display:flex;"><span>Configure local.conf to support build
+</span></span><span style="display:flex;"><span>Build the raspberrypi image will take about <span style="color:#ae81ff">3</span> hours or more depending on the server.
+</span></span><span style="display:flex;"><span>$ bitbake rpi-test-image
+</span></span><span style="display:flex;"><span>Loading cache: 100% |<span style="color:#75715e">############################################| Time: 0:00:01</span>
+</span></span><span style="display:flex;"><span>Loaded <span style="color:#ae81ff">4087</span> entries from dependency cache.
+</span></span><span style="display:flex;"><span>NOTE: Resolving any missing task queue dependencies
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Build Configuration:
+</span></span><span style="display:flex;"><span>BB_VERSION           <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2.2.0&#34;</span>
+</span></span><span style="display:flex;"><span>BUILD_SYS            <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;x86_64-linux&#34;</span>
+</span></span><span style="display:flex;"><span>NATIVELSBSTRING      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;universal&#34;</span>
+</span></span><span style="display:flex;"><span>TARGET_SYS           <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;aarch64-poky-linux&#34;</span>
+</span></span><span style="display:flex;"><span>MACHINE              <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;raspberrypi4-64&#34;</span>
+</span></span><span style="display:flex;"><span>DISTRO               <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;poky&#34;</span>
+</span></span><span style="display:flex;"><span>DISTRO_VERSION       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;4.1.3&#34;</span>
+</span></span><span style="display:flex;"><span>TUNE_FEATURES        <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;aarch64 armv8a crc cortexa72&#34;</span>
+</span></span><span style="display:flex;"><span>TARGET_FPU           <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>meta                 
+</span></span><span style="display:flex;"><span>meta-poky            
+</span></span><span style="display:flex;"><span>meta-yocto-bsp       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;langdale:a7d90a69d90ac980f28dd1783c2c5a849f6dbdc2&#34;</span>
+</span></span><span style="display:flex;"><span>meta-oe              
+</span></span><span style="display:flex;"><span>meta-python          
+</span></span><span style="display:flex;"><span>meta-networking      
+</span></span><span style="display:flex;"><span>meta-multimedia      
+</span></span><span style="display:flex;"><span>meta-filesystems     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;langdale:3f9340a9241d497753b330d90d6a3d8332c1ba7f&#34;</span>
+</span></span><span style="display:flex;"><span>meta-raspberrypi     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;langdale:6f5771d2bcfbfb8f8ce17b455c29a5703f2027c9&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Initialising tasks: 100% |<span style="color:#75715e">#######################################| Time: 0:00:03</span>
+</span></span><span style="display:flex;"><span>Sstate summary: Wanted <span style="color:#ae81ff">0</span> Local <span style="color:#ae81ff">0</span> Mirrors <span style="color:#ae81ff">0</span> Missed <span style="color:#ae81ff">0</span> Current <span style="color:#ae81ff">2106</span> <span style="color:#f92672">(</span>0% match, 100% complete<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>NOTE: Executing Tasks
+</span></span></code></pre></div><p>Prepare the built image to the SDCard. I use the GParted to format the SD Card to support the ext3 file system.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo bmaptool copy --bmap core-image-minimal-raspberrypi4-64-20210706094018.rootfs.wic.bmap core-image-minimal-raspberrypi4-64-20210706094018.rootfs.wic.bz2 /dev/mmcblk0
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> hlkn:
+</span></span><span style="display:flex;"><span>bmaptool: info: block map format version 2.0
+</span></span><span style="display:flex;"><span>bmaptool: info: <span style="color:#ae81ff">148583</span> blocks of size <span style="color:#ae81ff">4096</span> <span style="color:#f92672">(</span>580.4 MiB<span style="color:#f92672">)</span>, mapped <span style="color:#ae81ff">85941</span> blocks <span style="color:#f92672">(</span>335.7 MiB or 57.8%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>bmaptool: info: copying image <span style="color:#e6db74">&#39;core-image-minimal-raspberrypi4-64-20210706094018.rootfs.wic.bz2&#39;</span> to block device <span style="color:#e6db74">&#39;/dev/mmcblk0&#39;</span> using bmap file <span style="color:#e6db74">&#39;core-image-minimal-raspberrypi4-64-20210706094018.rootfs.wic.bmap&#39;</span>
+</span></span><span style="display:flex;"><span>bmaptool: info: 100% copied
+</span></span><span style="display:flex;"><span>bmaptool: info: synchronizing <span style="color:#e6db74">&#39;/dev/mmcblk0&#39;</span>
+</span></span><span style="display:flex;"><span>bmaptool: info: copying time: 19.0s, copying speed 17.6 MiB/sec
+</span></span></code></pre></div><h2 id="rasberry-pi-with-docker-project">
+  Rasberry PI with Docker project
+  <a class="anchor" href="#rasberry-pi-with-docker-project">#</a>
+</h2>
+<p>Notes to configure, build and run Docker in the raspberry-pi</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir -p ~/projects/rpid/source
+</span></span><span style="display:flex;"><span>$ cd ~/projects/rpid/source
+</span></span><span style="display:flex;"><span>$ git clone git://git.yoctoproject.org/poky
+</span></span><span style="display:flex;"><span>$ git branch --all
+</span></span><span style="display:flex;"><span>$ git checkout langdale
+</span></span><span style="display:flex;"><span>$ git clone git://git.yoctoproject.org/meta-openembeded
+</span></span><span style="display:flex;"><span>$ git branch --all
+</span></span><span style="display:flex;"><span>$ git checkout langdale
+</span></span><span style="display:flex;"><span>$ git clone git://git.yoctoproject.org/meta-rapberrypi
+</span></span><span style="display:flex;"><span>$ git branch --all
+</span></span><span style="display:flex;"><span>$ git checkout langdale
+</span></span><span style="display:flex;"><span>$ git clone git://git.yoctoproject.org/meta-virtualization
+</span></span><span style="display:flex;"><span>$ git branch --all
+</span></span><span style="display:flex;"><span>$ git checkout langdale
+</span></span><span style="display:flex;"><span>$ git clone git://git.yoctoproject.org/meta-security
+</span></span><span style="display:flex;"><span>$ git branch --all
+</span></span><span style="display:flex;"><span>$ git checkout langdale
+</span></span><span style="display:flex;"><span>$ git clone git://git.yoctoproject.org/meta-selinux
+</span></span><span style="display:flex;"><span>$ git branch --all
+</span></span><span style="display:flex;"><span>$ git checkout langdale
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>or 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd /workdir
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># sudo chown -R build:build *</span>
+</span></span><span style="display:flex;"><span>git clone -b langdale --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> git://git.yoctoproject.org/poky.git
+</span></span><span style="display:flex;"><span>git clone -b langdale --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> git://git.yoctoproject.org/meta-raspberrypi.git
+</span></span><span style="display:flex;"><span>git clone -b langdale --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> git://git.yoctoproject.org/meta-virtualization.git
+</span></span><span style="display:flex;"><span>git clone -b langdale --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> git://git.yoctoproject.org/meta-security.git
+</span></span><span style="display:flex;"><span>git clone -b langdale --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> git://git.yoctoproject.org/meta-selinux.git
+</span></span><span style="display:flex;"><span>git clone -b langdale --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> git://git.openembedded.org/meta-openembedded.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source poky/oe-init-build-env
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>bitbake-layers add-layer ../meta-openembedded/meta-oe
+</span></span><span style="display:flex;"><span>bitbake-layers add-layer ../meta-openembedded/meta-python
+</span></span><span style="display:flex;"><span>bitbake-layers add-layer ../meta-openembedded/meta-multimedia
+</span></span><span style="display:flex;"><span>bitbake-layers add-layer ../meta-openembedded/meta-networking
+</span></span><span style="display:flex;"><span>bitbake-layers add-layer ../meta-openembedded/meta-perl
+</span></span><span style="display:flex;"><span>bitbake-layers add-layer ../meta-openembedded/meta-filesystems
+</span></span><span style="display:flex;"><span>bitbake-layers add-layer ../meta-virtualization
+</span></span><span style="display:flex;"><span>bitbake-layers add-layer ../meta-selinux
+</span></span><span style="display:flex;"><span>bitbake-layers add-layer ../meta-security
+</span></span><span style="display:flex;"><span>bitbake-layers add-layer ../meta-raspberrypi
+</span></span><span style="display:flex;"><span>bitbake-layers show-layers
+</span></span></code></pre></div><p>Option 1: Configure the local.conf and bblayers.conf the raspberrypi with docker support</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vi conf/local.conf
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This sets the default machine to be qemux86-64 if no other machine is selected:</span>
+</span></span><span style="display:flex;"><span>MACHINE ??<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;raspberrypi4-64&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#MACHINE ??= &#34;qemux86-64&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># CONF_VERSION is increased each time build/conf/ changes incompatibly and is used to</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># track the version of this file when it was generated. This can safely be ignored if</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># this doesn&#39;t mean anything to you.</span>
+</span></span><span style="display:flex;"><span>CONF_VERSION <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DISTRO_FEATURES_append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; virtualization&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DISTRO_FEATURES_append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; systemd&#34;</span>
+</span></span><span style="display:flex;"><span>VIRTUAL-RUNTIME_init_manager <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;systemd&#34;</span>
+</span></span><span style="display:flex;"><span>DISTRO_FEATURES_BACKFILL_CONSIDERED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sysvinit&#34;</span>
+</span></span><span style="display:flex;"><span>VIRTUAL-RUNTIME_initscripts <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;systemd-compat-units&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>IMAGE_INSTALL_append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; sysstat&#34;</span>
+</span></span><span style="display:flex;"><span>IMAGE_INSTALL_append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; cronie&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>IMAGE_INSTALL_append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; openssh&#34;</span>
+</span></span><span style="display:flex;"><span>IMAGE_INSTALL_append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; openssh-sftp&#34;</span>
+</span></span><span style="display:flex;"><span>IMAGE_INSTALL_append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; openssh-sftp-server&#34;</span>
+</span></span><span style="display:flex;"><span>IMAGE_INSTALL_append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; curl-dev&#34;</span>
+</span></span><span style="display:flex;"><span>IMAGE_INSTALL_append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; docker-ce&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>IMAGE_INSTALL_append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; libstdc++&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ vi conf/bblayers.conf
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># changes incompatibly</span>
+</span></span><span style="display:flex;"><span>POKY_BBLAYERS_CONF_VERSION <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BBPATH <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>TOPDIR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>BBFILES ?<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BBLAYERS ?<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  /home/hlkn/rpi-gategarth/layers/poky/meta \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  /home/hlkn/rpi-gategarth/layers/poky/meta-poky \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  /home/hlkn/rpi-gategarth/layers/poky/meta-yocto-bsp \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  /home/hlkn/rpi-gategarth/layers/meta-raspberrypi \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  /home/hlkn/rpi-gategarth/layers/meta-openembedded/meta-oe \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  /home/hlkn/rpi-gategarth/layers/meta-openembedded/meta-python \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  /home/hlkn/rpi-gategarth/layers/meta-openembedded/meta-networking \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  /home/hlkn/rpi-gategarth/layers/meta-openembedded/meta-filesystems \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  /home/hlkn/rpi-gategarth/layers/meta-virtualization \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;</span>
+</span></span><span style="display:flex;"><span>Options 2: Follow the IBM tutorial <span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span>$ vi local.conf
+</span></span><span style="display:flex;"><span>MACHINE ?<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;raspberrypi4-64&#34;</span>
+</span></span><span style="display:flex;"><span>ENABLE_UART <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>ENABLE_I2C <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>KERNEL_MODULE_AUTOLOAD:rpi +<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;i2c-dev i2c-bcm2708&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add a feature</span>
+</span></span><span style="display:flex;"><span>EXTRA_IMAGE_FEATURES:append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; debug-tweaks ssh-server-dropbear package-management tools-sdk&#34;</span>
+</span></span><span style="display:flex;"><span>DISTRO_FEATURES:append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; bluez5 bluetooth wifi polkit acl xattr pam virtualization security systemd&#34;</span>
+</span></span><span style="display:flex;"><span>DISTRO_FEATURES:remove <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; sysvinit&#34;</span>
+</span></span><span style="display:flex;"><span>VIRTUAL-RUNTIME_init_manager <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;systemd&#34;</span>
+</span></span><span style="display:flex;"><span>LICENSE_FLAGS_ACCEPTED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;synaptics-killswitch&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add a recipe</span>
+</span></span><span style="display:flex;"><span>CORE_IMAGE_EXTRA_INSTALL:append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; vim&#34;</span>
+</span></span><span style="display:flex;"><span>DISTRO_FEATURES_BACKFILL_CONSIDERED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>IMAGE_INSTALL:append <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; ntpdate i2c-tools podman crun buildah skopeo cgroup-lite procps ca-certificates kernel-modules python3-pip python3-dbus ebtables cri-o cri-tools e2fsprogs-resize2fs linux-firmware-bcm43430 bluez5 python3-smbus wpa-supplicant bridge-utils git hostapd&#34;</span>
+</span></span><span style="display:flex;"><span>IMAGE_ROOTFS_EXTRA_SPACE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;8097152&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># BB_NUMBER_THREADS = &#34;9&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># PARALLEL_MAKE = &#34;-j 9&#34;</span>
+</span></span><span style="display:flex;"><span>INHERIT <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;rm_work&#34;</span>
+</span></span></code></pre></div><p>Run the bitbake command to generate the image. The above features add a lot more components than we actually need for runing MicroShift. These were added to permit some development and experimentation for learning yocto with a generous 8GB disk size. The python3, pip3, vim, i2cdetect, podman and crun runtime are installed. The debug-tweaks allows us to login as root without password.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitbake rpi-test-image -n
+</span></span><span style="display:flex;"><span>bitbake rpi-test-image --runonly<span style="color:#f92672">=</span>fetch
+</span></span><span style="display:flex;"><span>bitbake rpi-test-image <span style="color:#75715e"># This will take a couple of hours</span>
+</span></span></code></pre></div><p>This produces the rpi-test-image-raspberrypi4-64.wic.bz2.The balenaEtcher that we use to write to MicroSDXC card does not understand the bz2 format built by bitbake, so we extract the image</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd tmp/deploy/images/raspberrypi4-64
+</span></span><span style="display:flex;"><span>bzip2 -d -f rpi-test-image-raspberrypi4-64.wic.bz2
+</span></span></code></pre></div><p>Run docker in raspberrypi using the Option-1 configuration</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@raspberrypi4-64:~# dokerd &amp;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root@raspberrypi4-64:~# ps -ef|grep dockerd
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">207</span> root 0:01 dockerd
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">334</span> root 0:00 grep dockerd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ ssh root@192.168.0.229
+</span></span><span style="display:flex;"><span>The authenticity of host <span style="color:#e6db74">&#39;192.168.0.229 (192.168.0.229)&#39;</span> can<span style="color:#e6db74">&#39;t be established.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ECDSA key fingerprint is SHA256:R+OYjsNv6MhVBb+G5/fwQUcExcB9gSZ3IgOzTLlKT48.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Warning: Permanently added &#39;</span>192.168.0.229<span style="color:#e6db74">&#39; (ECDSA) to the list of known hosts.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">root@raspberrypi4-64:~#
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">root@raspberrypi4-64:~#
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">root@raspberrypi4-64:~# dockerd
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:02.537766772Z] Starting up
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:02.560111257Z] libcontainerd: started new containerd process pid=214
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:02.560950036Z] parsed scheme: &#34;unix&#34; module=grpc-java
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:02.561491685Z] scheme &#34;unix&#34; not registered, fallback to default scheme module=grpc-java
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:02.562066204Z] ccResolverWrapper: sending update to cc: {[{unix:///var/run/docker/containerd/containerd.sock 0 }] } module=grpc-java
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:02.562607260Z] ClientConn switching balancer to &#34;pick_first&#34; module=grpc-java
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:03.637249883Z] starting containerd revision=409c87ba59dd96965239573aa9458a3585c05468.m version=v1.4.4-36-g409c87ba5.m
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.043501494Z] loading plugin &#34;io.containerd.content.v1.content&#34;… type=io.containerd.content.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.044683051Z] loading plugin &#34;io.containerd.snapshotter.v1.aufs&#34;… type=io.containerd.snapshotter.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.050882372Z] skip loading plugin &#34;io.containerd.snapshotter.v1.aufs&#34;… error=&#34;aufs is not supported (modprobe aufs failed: exit status 1 \&#34;modprobe: FATAL: Module aufs not found in directory /lib/modules/5.10.17-v8\n\&#34;): skip plugin&#34; type=io.containerd.snapshotter.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.051224428Z] loading plugin &#34;io.containerd.snapshotter.v1.devmapper&#34;… type=io.containerd.snapshotter.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WARN[2023-03-29T10:08:04.051481576Z] failed to load plugin io.containerd.snapshotter.v1.devmapper error=&#34;devmapper not configured&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.051665225Z] loading plugin &#34;io.containerd.snapshotter.v1.native&#34;… type=io.containerd.snapshotter.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.052578485Z] loading plugin &#34;io.containerd.snapshotter.v1.overlayfs&#34;… type=io.containerd.snapshotter.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.054358746Z] loading plugin &#34;io.containerd.snapshotter.v1.zfs&#34;… type=io.containerd.snapshotter.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.055782303Z] skip loading plugin &#34;io.containerd.snapshotter.v1.zfs&#34;… error=&#34;path /var/lib/docker/containerd/daemon/io.containerd.snapshotter.v1.zfs must be a zfs filesystem to be used with the zfs snapshotter: skip plugin&#34; type=io.containerd.snapshotter.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.056042507Z] loading plugin &#34;io.containerd.metadata.v1.bolt&#34;… type=io.containerd.metadata.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WARN[2023-03-29T10:08:04.056633211Z] could not use snapshotter devmapper in metadata plugin error=&#34;devmapper not configured&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.056818008Z] metadata content store policy set policy=shared
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.078754400Z] loading plugin &#34;io.containerd.differ.v1.walking&#34;… type=io.containerd.differ.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.079083456Z] loading plugin &#34;io.containerd.gc.v1.scheduler&#34;… type=io.containerd.gc.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.079435549Z] loading plugin &#34;io.containerd.service.v1.introspection-service&#34;… type=io.containerd.service.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.079831623Z] loading plugin &#34;io.containerd.service.v1.containers-service&#34;… type=io.containerd.service.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.080098512Z] loading plugin &#34;io.containerd.service.v1.content-service&#34;… type=io.containerd.service.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.080321012Z] loading plugin &#34;io.containerd.service.v1.diff-service&#34;… type=io.containerd.service.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.080667809Z] loading plugin &#34;io.containerd.service.v1.images-service&#34;… type=io.containerd.service.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.080903606Z] loading plugin &#34;io.containerd.service.v1.leases-service&#34;… type=io.containerd.service.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.081136569Z] loading plugin &#34;io.containerd.service.v1.namespaces-service&#34;… type=io.containerd.service.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.081352513Z] loading plugin &#34;io.containerd.service.v1.snapshots-service&#34;… type=io.containerd.service.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.081569884Z] loading plugin &#34;io.containerd.runtime.v1.linux&#34;… type=io.containerd.runtime.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.082805311Z] loading plugin &#34;io.containerd.runtime.v2.task&#34;… type=io.containerd.runtime.v2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.083777590Z] loading plugin &#34;io.containerd.monitor.v1.cgroups&#34;… type=io.containerd.monitor.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.090603300Z] loading plugin &#34;io.containerd.service.v1.tasks-service&#34;… type=io.containerd.service.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.091025856Z] loading plugin &#34;io.containerd.internal.v1.restart&#34;… type=io.containerd.internal.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.093178396Z] loading plugin &#34;io.containerd.grpc-java.v1.containers&#34;… type=io.containerd.grpc-java.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.093511174Z] loading plugin &#34;io.containerd.grpc-java.v1.content&#34;… type=io.containerd.grpc-java.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.093740433Z] loading plugin &#34;io.containerd.grpc-java.v1.diff&#34;… type=io.containerd.grpc-java.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.093958878Z] loading plugin &#34;io.containerd.grpc-java.v1.events&#34;… type=io.containerd.grpc-java.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.094174582Z] loading plugin &#34;io.containerd.grpc-java.v1.healthcheck&#34;… type=io.containerd.grpc-java.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.094391082Z] loading plugin &#34;io.containerd.grpc-java.v1.images&#34;… type=io.containerd.grpc-java.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.094599675Z] loading plugin &#34;io.containerd.grpc-java.v1.leases&#34;… type=io.containerd.grpc-java.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.094809749Z] loading plugin &#34;io.containerd.grpc-java.v1.namespaces&#34;… type=io.containerd.grpc-java.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.095029990Z] loading plugin &#34;io.containerd.internal.v1.opt&#34;… type=io.containerd.internal.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.097362326Z] loading plugin &#34;io.containerd.grpc-java.v1.snapshots&#34;… type=io.containerd.grpc-java.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.097741289Z] loading plugin &#34;io.containerd.grpc-java.v1.tasks&#34;… type=io.containerd.grpc-java.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.097978419Z] loading plugin &#34;io.containerd.grpc-java.v1.version&#34;… type=io.containerd.grpc-java.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.098192604Z] loading plugin &#34;io.containerd.grpc-java.v1.introspection&#34;… type=io.containerd.grpc-java.v1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.100055884Z] serving… address=/var/run/docker/containerd/containerd-debug.sock
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.100629755Z] serving… address=/var/run/docker/containerd/containerd.sock.ttrpc
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.101130218Z] serving… address=/var/run/docker/containerd/containerd.sock
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.101361459Z] containerd successfully booted in 0.479344s
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.174947773Z] parsed scheme: &#34;unix&#34; module=grpc-java
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.175125958Z] scheme &#34;unix&#34; not registered, fallback to default scheme module=grpc-java
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.175262977Z] ccResolverWrapper: sending update to cc: {[{unix:///var/run/docker/containerd/containerd.sock 0 }] } module=grpc-java
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.175364273Z] ClientConn switching balancer to &#34;pick_first&#34; module=grpc-java
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.180830205Z] parsed scheme: &#34;unix&#34; module=grpc-java
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.180963853Z] scheme &#34;unix&#34; not registered, fallback to default scheme module=grpc-java
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.181161427Z] ccResolverWrapper: sending update to cc: {[{unix:///var/run/docker/containerd/containerd.sock 0 }] } module=grpc-java
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.181242575Z] ClientConn switching balancer to &#34;pick_first&#34; module=grpc-java
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ERRO[2023-03-29T10:08:04.187997490Z] Failed to built-in GetDriver graph btrfs /var/lib/docker
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ERRO[2023-03-29T10:08:04.196119461Z] failed to mount overlay: no such device storage-driver=overlay2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ERRO[2023-03-29T10:08:04.201334206Z] AUFS was not found in /proc/filesystems storage-driver=aufs
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ERRO[2023-03-29T10:08:04.208779381Z] failed to mount overlay: no such device storage-driver=overlay
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ERRO[2023-03-29T10:08:04.208921825Z] Failed to built-in GetDriver graph devicemapper /var/lib/docker
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WARN[2023-03-29T10:08:04.341482234Z] Your kernel does not support cgroup memory limit
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WARN[2023-03-29T10:08:04.341604105Z] Your kernel does not support cgroup rt period
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WARN[2023-03-29T10:08:04.341664994Z] Your kernel does not support cgroup rt runtime
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WARN[2023-03-29T10:08:04.341748161Z] Your kernel does not support cgroup blkio weight
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WARN[2023-03-29T10:08:04.341810383Z] Your kernel does not support cgroup blkio weight_device
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:04.343829385Z] Loading containers: start.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WARN[2023-03-29T10:08:04.371513875Z] Running modprobe bridge br_netfilter failed with message: modprobe: WARNING: Module br_netfilter not found in directory /lib/modules/5.10.17-v8
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">insmod /lib/modules/5.10.17-v8/kernel/net/llc/llc.ko
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">insmod /lib/modules/5.10.17-v8/kernel/net/802/stp.ko
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">insmod /lib/modules/5.10.17-v8/kernel/net/bridge/bridge.ko
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">, error: exit status 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:05.046749137Z] Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:05.541597770Z] Loading containers: done.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:05.823780138Z] Docker daemon commit=ff3fbc9d55de9fce497cd058411f21f4a4dcdb7c graphdriver(s)=vfs version=v19.03.13-ce
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:05.824912251Z] Daemon has completed initialization
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">INFO[2023-03-29T10:08:05.935543915Z] API listen on /var/run/docker.sock
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">$ docker login --username henrynguyen --password
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">$ sudo docker run hello-world
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Unable to find image &#39;</span>hello-world:latest<span style="color:#960050;background-color:#1e0010">&#39;</span> locally
+</span></span><span style="display:flex;"><span>latest: Pulling from library/hello-world
+</span></span><span style="display:flex;"><span>7050e35b49f5: Pull complete
+</span></span><span style="display:flex;"><span>Digest: sha256:ffb13da98453e0f04d33a6eee5bb8e46ee50d08ebe17735fc0779d0349e889e9
+</span></span><span style="display:flex;"><span>Status: Downloaded newer image <span style="color:#66d9ef">for</span> hello-world:latest
+</span></span><span style="display:flex;"><span>ERRO<span style="color:#f92672">[</span>2023-03-29T10:09:22.228694279Z<span style="color:#f92672">]</span> 57c0bda5e06d9e1c30d9ab6c6b4f76f38606723e5b76b64885cc98b8260f7ba9 cleanup: failed to delete container from containerd: no such container
+</span></span><span style="display:flex;"><span>ERRO<span style="color:#f92672">[</span>2023-03-29T10:09:22.229116046Z<span style="color:#f92672">]</span> Handler <span style="color:#66d9ef">for</span> POST /v1.40/containers/57c0bda5e06d9e1c30d9ab6c6b4f76f38606723e5b76b64885cc98b8260f7ba9/start returned error: failed to create endpoint sad_cohen on network bridge: failed to add the host <span style="color:#f92672">(</span>veth03ee259<span style="color:#f92672">)</span> &lt;<span style="color:#f92672">=</span>&gt; sandbox <span style="color:#f92672">(</span>vethabd8cd3<span style="color:#f92672">)</span> pair interfaces: operation not supported
+</span></span><span style="display:flex;"><span>docker: Error response from daemon: failed to create endpoint sad_cohen on network bridge: failed to add the host <span style="color:#f92672">(</span>veth03ee259<span style="color:#f92672">)</span> &lt;<span style="color:#f92672">=</span>&gt; sandbox <span style="color:#f92672">(</span>vethabd8cd3<span style="color:#f92672">)</span> pair interfaces: operation not supported.
+</span></span><span style="display:flex;"><span>ERRO<span style="color:#f92672">[</span>0005<span style="color:#f92672">]</span> error waiting <span style="color:#66d9ef">for</span> container: context canceled
+</span></span><span style="display:flex;"><span>root@raspberrypi4-64:~# docker container ls -a
+</span></span><span style="display:flex;"><span>CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+</span></span><span style="display:flex;"><span>57c0bda5e06d hello-world <span style="color:#e6db74">&#34;/hello&#34;</span> <span style="color:#ae81ff">10</span> seconds ago Created sad_cohen
+</span></span><span style="display:flex;"><span>root@raspberrypi4-64:~# docker image ls -a
+</span></span><span style="display:flex;"><span>REPOSITORY TAG IMAGE ID CREATED SIZE
+</span></span><span style="display:flex;"><span>hello-world latest 46331d942d63 <span style="color:#ae81ff">12</span> months ago 9.14kB
+</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#training">Training</a>
+      <ul>
+        <li><a href="#udemy">Udemy</a></li>
+        <li><a href="#linkedin">Linkedin</a></li>
+        <li><a href="#youtube">Youtube</a></li>
+      </ul>
+    </li>
+    <li><a href="#projects">Projects</a>
+      <ul>
+        <li><a href="#develop-the-embedded-linux-os-to-run-the-yoctoopenembededraspberry-pi--docker">Develop the Embedded Linux OS to run the Yocto/Openembeded/Raspberry Pi  Docker</a></li>
+        <li><a href="#deploy-adlinkvortex-dds-docker-to-rasberrypi4">Deploy ADLINK/VORTEX DDS Docker to RasberryPi4</a></li>
+        <li><a href="#develop-the-development-environment-to-allow-the-developers-to-develop-the-embedded-application-using-docker">Develop the Development Environment to allow the Developers to develop the Embedded application using Docker</a></li>
+      </ul>
+    </li>
+    <li><a href="#study">Study</a></li>
+    <li><a href="#qemu-project">QEMU project</a></li>
+    <li><a href="#raspberry-pi-project">Raspberry PI project</a></li>
+    <li><a href="#rasberry-pi-with-docker-project">Rasberry PI with Docker project</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
