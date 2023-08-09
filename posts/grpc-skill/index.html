@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction # Hi everyone!
+Here are some thoughts on the solution for protobuf and gRPC:
+Set the Development Environment for
+Java: we start to setup the Java DevEnv to build up the confidence and know-how. The reasons are that we know Java Development come with two structures of building application MAVEN and GRADLE. We need to feel how gRPC works in the Java DevEnv. Refer to the URL link for detailed notes.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Grpc Skill" />
+<meta property="og:description" content="Introduction # Hi everyone!
+Here are some thoughts on the solution for protobuf and gRPC:
+Set the Development Environment for
+Java: we start to setup the Java DevEnv to build up the confidence and know-how. The reasons are that we know Java Development come with two structures of building application MAVEN and GRADLE. We need to feel how gRPC works in the Java DevEnv. Refer to the URL link for detailed notes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrynguyenattheitservice.github.io/posts/grpc-skill/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-29T12:02:32+10:00" />
+<meta property="article:modified_time" content="2023-05-29T12:02:32+10:00" />
+<title>Grpc Skill | The IT Service github.io</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.6ddb36d39493a019c43b8bf9aa53e21b05848416ce7d1f9ba9d143b44574bdc9.js" integrity="sha256-bds205SToBnEO4v5qlPiGwWEhBbOfR&#43;bqdFDtEV0vck=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>The IT Service github.io</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/about/"  target="_blank" rel="noopener">
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="/homelab/"  target="_blank" rel="noopener">
+        Homelab
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Grpc Skill</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#oma">OMA</a></li>
+    <li><a href="#grpc-and-idl">grpc and IDL</a></li>
+    <li><a href="#grpc-with-java">grpc with java</a></li>
+    <li><a href="#grpc-with-golang">grpc with golang</a></li>
+    <li><a href="#grpc-with-python">grpc with python</a></li>
+    <li><a href="#grpc-with-android">grpc with android</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/grpc-skill/">Grpc Skill</a>
+  </h1>
+  
+  <h5>May 29, 2023</h5>
+
+
+
+  
+
+  
+  <div>
+    
+      <a href="/tags/grpc-java/">grpc-java</a>, 
+      <a href="/tags/grpc-java-with-java/">grpc-java with java</a>, 
+      <a href="/tags/grpc-java-with-go/">grpc-java with go</a>
+  </div>
+  
+
+
+
+<h1 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h1>
+<p>Hi everyone!</p>
+<p>Here are some thoughts on the solution for protobuf and gRPC:</p>
+<ul>
+<li>
+<p>Set the Development Environment for</p>
+<ul>
+<li><a href="/grpc-java/dev-env">Java</a>: we start to setup the Java DevEnv to build up the confidence and know-how. The reasons are that we know Java Development come with two structures of building application MAVEN and GRADLE. We need to feel how gRPC works in the Java DevEnv. Refer to the URL link for detailed notes.</li>
+<li><a href="/grpc-cpp/dev-env">C (more likely to be used for the firmware development than CPP)</a>, <a href="/grpc-cpp/dev-env">CPP (CPP in the wrong hand can cause issues in the firmware development)</a>: We have to dig deep into the memory lane to setup the CPP DevEnv. We start with CMAKE and LINUX. We need more time to study the BAZEL. Refer to the URL link for detailed notes.</li>
+<li><a href="/grpc-golang/dev-env">Go</a>: We have not fully completed the Go DevEnv but we perform a quick test to build the HelloWorld and perform the interopability test between Go and CPP / Go and Java to ensure that the protobuf is doing what it actually documented.</li>
+<li><a href="/grpc-python/dev-env">Python - Python (to be use for testing)</a>: we did some training with Python,</li>
+</ul>
+</li>
+<li>
+<p>Test out the protobuf and the interoperability across java, go, python and cpp.</p>
+</li>
+<li>
+<p>Testing out the interoperability between various environments (Java vs Go vs Python vs C/CPP)</p>
+</li>
+<li>
+<p>We PoC the IoT</p>
+<ul>
+<li>Bootstrap - Device Authentication</li>
+<li>Registration and Registration Update - Device Authorization</li>
+<li>CRUD and O/N - Create, Remove, Update, Display and Observable/Notification on the smart objects</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../static/images/grpc-java/OMAToGRPCServiceModel.png" alt="OMA To GRPC Service Modelling" title="OMA To GRPC Service Modelling"/></p>
+<p><img src="../../static/images/grpc-java/OMAToGRPCBootstrap.png" alt="OMA To GRPC Bootstrap" title="OMA To GRPC Service Modelling"/></p>
+<p><img src="../../static/images/grpc-java/OMAToGRPCDeviceManagement.png" alt="OMA To GRPC Device Management" title="OMA To GRPC Service Modelling"/></p>
+<p><strong>Bootstrap</strong></p>
+<pre tabindex="0"><code>  syntax = &#34;proto3&#34;;
+  
+  import &#34;lwm2m/OMA0000Security.proto&#34;;
+  import &#34;lwm2m/OMA0002Device.proto&#34;;
+  
+  package au.com.theitservice.iot;
+  option java_package = &#34;au.com.theitservice.iot&#34;;
+  option java_multiple_files = true;
+  
+  service BootstrapService {
+    rpc bootstrap(lwm2m.OMA0002Device) returns (lwm2m.OMA0000Security);
+  }
+</code></pre><p><strong>Registration and Registration Update</strong></p>
+<pre tabindex="0"><code>  syntax = &#34;proto3&#34;;
+  import &#34;google/protobuf/timestamp.proto&#34;;
+  import &#34;google/protobuf/any.proto&#34;;
+  
+  package au.com.theitservice.iot;
+  option java_package = &#34;au.com.theitservice.iot&#34;;
+  option java_multiple_files = true;
+  
+  message MessagesRegistrationAnyObjectsRequest {
+    google.protobuf.Timestamp last_updated = 1;
+    repeated google.protobuf.Any omaObjects = 2;
+  }
+  
+  message MessagesRegistrationAnyObjectsResponse {
+    google.protobuf.Timestamp last_updated = 1;
+    int32 stausCode = 2;
+    string statusMsg = 3;
+  }
+  
+  service RegistrationService {
+    rpc registration(MessagesRegistrationAnyObjectsRequest) returns (MessagesRegistrationAnyObjectsResponse);
+  }
+  
+  service RegistrationUpdateService {
+    rpc registrationUpdate(MessagesRegistrationAnyObjectsRequest) returns (MessagesRegistrationAnyObjectsResponse);
+  }
+  
+  
+  Or we may select to pass along the object name and we use the name to construct the smart object.
+  
+  syntax = &#34;proto3&#34;;
+  import &#34;google/protobuf/timestamp.proto&#34;;
+  
+  package au.com.theitservice.iot;
+  option java_package = &#34;au.com.theitservice.iot&#34;;
+  option java_multiple_files = true;
+  
+  message MessagesRegistrationRequest {
+    // List of messages to be requested for monitor
+    message RegisteredObject {
+      int32 objectId = 1;
+      string objectName = 2;
+    }
+    repeated RegisteredObject registerObjects = 1;
+  }
+  
+  message MessagesRegistrationResponse {
+    // Acknowledge that messages to be monitored
+    message RegisterStatus {
+      int32 code = 1;
+      string statusMsg = 2;
+    }
+  }
+  
+  service RegistrationNameObjectsService {
+    rpc registrationNameObjects(MessagesRegistrationRequest) returns (MessagesRegistrationResponse);
+  }
+  
+  service RegistrationUpdateNameObjectsService {
+    rpc registrationUpdateNameObjects(MessagesRegistrationRequest) returns (MessagesRegistrationResponse);
+  }
+ 
+</code></pre><p>**CRUD and O/N (to be specified) **</p>
+<pre tabindex="0"><code>  syntax = &#34;proto3&#34;;
+  
+  package au.com.theitservice.iot;
+  option java_package = &#34;au.com.theitservice.iot&#34;;
+  option java_multiple_files = true;
+  import &#34;google/protobuf/timestamp.proto&#34;;
+  import &#34;google/protobuf/any.proto&#34;;
+  
+  
+  message ObjectRequest {
+    google.protobuf.Timestamp last_updated = 1;
+    repeated google.protobuf.Any omaObjects = 2;
+  }
+  
+  message ObjectResponse {
+    repeated google.protobuf.Any omaObjects = 2;
+  }
+  
+  
+  service CRUD {
+    rpc postObject(ObjectRequest) returns (ObjectResponse);
+    rpc getObject(ObjectRequest) returns (ObjectResponse);
+    rpc putObject(ObjectRequest) returns (ObjectResponse);
+    rpc deleteObject(ObjectRequest) returns (ObjectResponse);
+  }
+  
+  service ChangeNotification {
+    rpc changeNotify(ObjectRequest) returns (ObjectResponse);
+  }
+</code></pre><h2 id="oma">
+  OMA
+  <a class="anchor" href="#oma">#</a>
+</h2>
+<p><a href="https://github.com/OpenMobileAlliance/lwm2m-registry">GitHub</a></p>
+<h2 id="grpc-and-idl">
+  grpc and IDL
+  <a class="anchor" href="#grpc-and-idl">#</a>
+</h2>
+<p><a href="https://grpc.io/docs/what-is-grpc/introduction/">Introduction</a></p>
+<h2 id="grpc-with-java">
+  grpc with java
+  <a class="anchor" href="#grpc-with-java">#</a>
+</h2>
+<p><a href="">Study</a>
+<a href="">Development Environment</a>
+<a href="">Development Tool</a></p>
+<h2 id="grpc-with-golang">
+  grpc with golang
+  <a class="anchor" href="#grpc-with-golang">#</a>
+</h2>
+<p><a href="">Study</a>
+<a href="">Development Environment</a>
+<a href="">Development Tool</a></p>
+<h2 id="grpc-with-python">
+  grpc with python
+  <a class="anchor" href="#grpc-with-python">#</a>
+</h2>
+<p><a href="">Study</a>
+<a href="">Development Environment</a>
+<a href="">Development Tool</a></p>
+<h2 id="grpc-with-android">
+  grpc with android
+  <a class="anchor" href="#grpc-with-android">#</a>
+</h2>
+<p><a href="">Study</a>
+<a href="">Development Environment</a>
+<a href="">Development Tool</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#oma">OMA</a></li>
+    <li><a href="#grpc-and-idl">grpc and IDL</a></li>
+    <li><a href="#grpc-with-java">grpc with java</a></li>
+    <li><a href="#grpc-with-golang">grpc with golang</a></li>
+    <li><a href="#grpc-with-python">grpc with python</a></li>
+    <li><a href="#grpc-with-android">grpc with android</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
