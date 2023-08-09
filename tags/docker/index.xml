@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on The IT Service github.io</title>
+    <link>https://henrynguyenattheitservice.github.io/tags/docker/</link>
+    <description>Recent content in Docker on The IT Service github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 May 2023 13:23:42 +1000</lastBuildDate><atom:link href="https://henrynguyenattheitservice.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java Skill (draft)</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/java-skill/</link>
+      <pubDate>Mon, 22 May 2023 13:23:42 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/java-skill/</guid>
+      <description>GitHub Referece
+Development Environment # The Java Development Environment is setup as follows:
+We use IntelliJ IDEA as the primary Integrated Development Environment tool.
+IntelliJ IDEA with Git Servers: to connect to Git Server,GitLab Server, Bitbucket and Github IntelliJ IDEA with Git: to manage Code Control - Local and Remote Git activities. IntelliJ IDEA Debug: to debug and learn everything about Golang IntelliJ IDEA Remote Debug: to remote debug to diagnose code issues and defects in the integration IntelliJ IDEA and Docker Desktop as an Integrated Development Environment: to create the development environment using Docker and Kubernetes e.</description>
+    </item>
+    
+    <item>
+      <title>Golang Skill (draft)</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/golang-skill/</link>
+      <pubDate>Tue, 16 May 2023 16:21:26 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/golang-skill/</guid>
+      <description>GitHub Referece
+Development Environment # The Golang Development Environment is setup as follows:
+We use GoLand as the primary Integrated Development Environment tool.
+GoLand with Git Servers: to connect to Git Server,GitLab Server, Bitbucket and Github GoLand with Git: to manage Code Control - Local and Remote Git activities. GoLand Debug: to debug and learn everything about Golang GoLand Remote Debug: to remote debug to diagnose code issues and defects in the integration GoLand and Docker Desktop as an Integrated Development Environment: to create the development environment using Docker and Kubernetes e.</description>
+    </item>
+    
+  </channel>
+</rss>
