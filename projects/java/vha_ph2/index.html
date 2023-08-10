@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content=" Introduction # Unico-&gt;CGI developed and deployed VHA to TPG to support Phase-1 Prepaid mobile service and then extend the support to Phase-2 Postpaid mobile.
+Project Team # Duration ~2-3 months and 4 production releases 1 x Project Manager 1 x System Architect was responsible Document requirements and specifications Provide guidance to Developers and Testers Interact with TPG and Matrixx Expert to acquire requirements and specifications and to provide technical support to TPG 1 x Senior and 1 x Experience Java Developer was responsible the Phase-1 Prepaid development 1 x Senior Java Developer was responsible the Phase-1 Postpaid responsible for Learning the Phase-1 Prepaid solution and develop Phase-2 Postpaid solution from the Experience Java Developer Set up the Development Environment with Oracle Database running as docker Fixing defects from Phase-1 to study the Prepaid migration solution Develop the Subscriber Loader, Filter, Batch Manager and Matrixx Interface components to support the Postpaid migration 2 x Testers 1 x Functional and Integration Tester 1 x Model Support Tester / Production Support Tester Technologies # Oracle Database running using Docker # Spring Boot 2 running as a Batch Job # Red Hat Camel 2 used to transform data through various migration stages # ">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Vha_ph2" />
+<meta property="og:description" content=" Introduction # Unico-&gt;CGI developed and deployed VHA to TPG to support Phase-1 Prepaid mobile service and then extend the support to Phase-2 Postpaid mobile.
+Project Team # Duration ~2-3 months and 4 production releases 1 x Project Manager 1 x System Architect was responsible Document requirements and specifications Provide guidance to Developers and Testers Interact with TPG and Matrixx Expert to acquire requirements and specifications and to provide technical support to TPG 1 x Senior and 1 x Experience Java Developer was responsible the Phase-1 Prepaid development 1 x Senior Java Developer was responsible the Phase-1 Postpaid responsible for Learning the Phase-1 Prepaid solution and develop Phase-2 Postpaid solution from the Experience Java Developer Set up the Development Environment with Oracle Database running as docker Fixing defects from Phase-1 to study the Prepaid migration solution Develop the Subscriber Loader, Filter, Batch Manager and Matrixx Interface components to support the Postpaid migration 2 x Testers 1 x Functional and Integration Tester 1 x Model Support Tester / Production Support Tester Technologies # Oracle Database running using Docker # Spring Boot 2 running as a Batch Job # Red Hat Camel 2 used to transform data through various migration stages # " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrynguyenattheitservice.github.io/projects/java/vha_ph2/" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2023-06-15T09:02:26+10:00" />
+<meta property="article:modified_time" content="2023-06-15T09:02:26+10:00" />
+<title>Vha_ph2 | The IT Service github.io</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.4f7000681003d2bc65f850d70cddafce6977cbada04a8ce67a6f3e4098a0752c.js" integrity="sha256-T3AAaBAD0rxl&#43;FDXDN2vzml3y62gSozmem8&#43;QJigdSw=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>The IT Service github.io</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/about/"  target="_blank" rel="noopener">
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/homelab-skill/"  target="_blank" rel="noopener">
+        Homelab
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Vha_ph2</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#project-team">Project Team</a></li>
+    <li><a href="#technologies">Technologies</a>
+      <ul>
+        <li><a href="#oracle-database-running-using-docker">Oracle Database running using Docker</a></li>
+        <li><a href="#spring-boot-2-running-as-a-batch-job">Spring Boot 2 running as a Batch Job</a></li>
+        <li><a href="#red-hat-camel-2-used-to-transform-data-through-various-migration-stages">Red Hat Camel 2 used to transform data through various migration stages</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h1>
+<p>Unico-&gt;CGI developed and deployed VHA to TPG to support Phase-1 Prepaid mobile service and then extend the support to Phase-2 Postpaid mobile.</p>
+<h2 id="project-team">
+  Project Team
+  <a class="anchor" href="#project-team">#</a>
+</h2>
+<ul>
+<li>Duration ~2-3 months and 4 production releases</li>
+<li>1 x Project Manager</li>
+<li>1 x System Architect was responsible
+<ul>
+<li>Document requirements and specifications</li>
+<li>Provide guidance to Developers and Testers</li>
+<li>Interact with TPG and Matrixx Expert to acquire requirements and specifications and to provide technical support to TPG</li>
+</ul>
+</li>
+<li>1 x Senior and 1 x Experience Java Developer was responsible the Phase-1 Prepaid development</li>
+<li>1 x Senior Java Developer was responsible the Phase-1 Postpaid responsible for
+<ul>
+<li>Learning the Phase-1 Prepaid solution and develop Phase-2 Postpaid solution from the Experience Java Developer</li>
+<li>Set up the Development Environment with Oracle Database running as docker</li>
+<li>Fixing defects from Phase-1 to study the Prepaid migration solution</li>
+<li>Develop the Subscriber Loader, Filter, Batch Manager and Matrixx Interface components to support the Postpaid migration</li>
+</ul>
+</li>
+<li>2 x Testers</li>
+<li>1 x Functional and Integration Tester</li>
+<li>1 x Model Support Tester / Production Support Tester</li>
+</ul>
+<h2 id="technologies">
+  Technologies
+  <a class="anchor" href="#technologies">#</a>
+</h2>
+<h3 id="oracle-database-running-using-docker">
+  Oracle Database running using Docker
+  <a class="anchor" href="#oracle-database-running-using-docker">#</a>
+</h3>
+<h3 id="spring-boot-2-running-as-a-batch-job">
+  Spring Boot 2 running as a Batch Job
+  <a class="anchor" href="#spring-boot-2-running-as-a-batch-job">#</a>
+</h3>
+<h3 id="red-hat-camel-2-used-to-transform-data-through-various-migration-stages">
+  Red Hat Camel 2 used to transform data through various migration stages
+  <a class="anchor" href="#red-hat-camel-2-used-to-transform-data-through-various-migration-stages">#</a>
+</h3>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#project-team">Project Team</a></li>
+    <li><a href="#technologies">Technologies</a>
+      <ul>
+        <li><a href="#oracle-database-running-using-docker">Oracle Database running using Docker</a></li>
+        <li><a href="#spring-boot-2-running-as-a-batch-job">Spring Boot 2 running as a Batch Job</a></li>
+        <li><a href="#red-hat-camel-2-used-to-transform-data-through-various-migration-stages">Red Hat Camel 2 used to transform data through various migration stages</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction # Unico-&gt;CGI developed and deployed Modini to Telstra to support 3G and 4G Mobile services more than 10 years ago.
+Recently Telstra deploy 4G-&gt;5G and 5G Stand Alone Mobile services and Modini is extended to support the 4G-&gt;5G and 5G Stand Alone.
+The projects was planned into four releases together with fixing some critical and major defects.
+Project Team # Duration ~6-8 months and 4 production releases 1 x Project Manager 1 x System Architect was responsible Document the 4G-&gt;5G and 5G SA requirements and specifications Provide guidance to Developers and Testers Interact with Telstra Subject Mater Expert to acquire requirements and specifications and to provide technical support to Telstra 1 x Senior Java Developer was responsible Work with the System Architect and Testers to analyze the requirements and specifications Study the current solution from the source code and technologies in the Dev, Test and Production.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Modini Project" />
+<meta property="og:description" content="Introduction # Unico-&gt;CGI developed and deployed Modini to Telstra to support 3G and 4G Mobile services more than 10 years ago.
+Recently Telstra deploy 4G-&gt;5G and 5G Stand Alone Mobile services and Modini is extended to support the 4G-&gt;5G and 5G Stand Alone.
+The projects was planned into four releases together with fixing some critical and major defects.
+Project Team # Duration ~6-8 months and 4 production releases 1 x Project Manager 1 x System Architect was responsible Document the 4G-&gt;5G and 5G SA requirements and specifications Provide guidance to Developers and Testers Interact with Telstra Subject Mater Expert to acquire requirements and specifications and to provide technical support to Telstra 1 x Senior Java Developer was responsible Work with the System Architect and Testers to analyze the requirements and specifications Study the current solution from the source code and technologies in the Dev, Test and Production." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrynguyenattheitservice.github.io/projects/java/modini/" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2023-06-09T13:18:19+10:00" />
+<meta property="article:modified_time" content="2023-06-09T13:18:19+10:00" />
+<title>Modini Project | The IT Service github.io</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.4f7000681003d2bc65f850d70cddafce6977cbada04a8ce67a6f3e4098a0752c.js" integrity="sha256-T3AAaBAD0rxl&#43;FDXDN2vzml3y62gSozmem8&#43;QJigdSw=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>The IT Service github.io</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/about/"  target="_blank" rel="noopener">
+        About
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="/posts/homelab-skill/"  target="_blank" rel="noopener">
+        Homelab
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Modini Project</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#project-team">Project Team</a></li>
+    <li><a href="#technologies">Technologies</a>
+      <ul>
+        <li><a href="#front-end-technologies">Front End Technologies</a></li>
+        <li><a href="#back-end-technologies">Back End Technologies</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h1>
+<p>Unico-&gt;CGI developed and deployed Modini to Telstra to support 3G and 4G Mobile services more than 10 years ago.</p>
+<p>Recently Telstra deploy 4G-&gt;5G and 5G Stand Alone Mobile services and Modini is extended to support the 4G-&gt;5G and 5G Stand Alone.</p>
+<p>The projects was planned into four releases together with fixing some critical and major defects.</p>
+<h2 id="project-team">
+  Project Team
+  <a class="anchor" href="#project-team">#</a>
+</h2>
+<ul>
+<li>Duration ~6-8 months and 4 production releases</li>
+<li>1 x Project Manager</li>
+<li>1 x System Architect was responsible
+<ul>
+<li>Document the 4G-&gt;5G and 5G SA requirements and specifications</li>
+<li>Provide guidance to Developers and Testers</li>
+<li>Interact with Telstra Subject Mater Expert to acquire requirements and specifications and to provide technical support to Telstra</li>
+</ul>
+</li>
+<li>1 x Senior Java Developer was responsible
+<ul>
+<li>Work with the System Architect and Testers to analyze the requirements and specifications</li>
+<li>Study the current solution from the source code and technologies in the Dev, Test and Production. When the DevEnv is set up with remote debug, and yes the project is heading home with the achievement.</li>
+<li>Use JIRA to plan features and defects to each sprint</li>
+<li>Hourly to daily analyse each feature and defect with the tester</li>
+<li>Develop the features with the unit testing</li>
+<li>Develop the solution to for each defect with functional, model suport and production support testing</li>
+<li>Develop and deploy the sprint releases with the integration testing</li>
+<li>Use Bitbucket to build and deploy the releases to the functional tester also to work with the tester for any short cycle functional testing</li>
+<li>Use Jenkins to CI/CD build formal releases to the functional and model support testers</li>
+<li>Provide third level support and guidance to Model/Production Support Testers and Telstra customers via System Architect and Model/Production Support Tester</li>
+<li>Interact with OCS Developers (billing and charging database and application) and Mediator Developers (sending requests and receiving responses to test mobile services) to develop the technical requirements and specifications.</li>
+</ul>
+</li>
+<li>3 x Testers
+<ul>
+<li>1 x Functional and Integration Tester</li>
+<li>1 x Model Support Tester</li>
+<li>1 x Production Support Tester</li>
+</ul>
+</li>
+</ul>
+<h2 id="technologies">
+  Technologies
+  <a class="anchor" href="#technologies">#</a>
+</h2>
+<p>The objectives were:</p>
+<ul>
+<li>Study the legacy technologies and set up the Development Environment using Java 7, JBoss EAP 6.3, JSF 2.1, Groovy, Gradle 2</li>
+<li>Study the solution from the code as there have not been documentation</li>
+<li>When developing the new features we must ensure the all backward compatibilities for the 3G, 4G and some 4G-&gt;5G using Home Location paradigm and 4G-&gt;5G and 5G SA using CDB paradigm.</li>
+</ul>
+<h3 id="front-end-technologies">
+  Front End Technologies
+  <a class="anchor" href="#front-end-technologies">#</a>
+</h3>
+<h4 id="j2ee---java-server-face">
+  J2EE - Java Server Face
+  <a class="anchor" href="#j2ee---java-server-face">#</a>
+</h4>
+<p>The User Interface is developed using HTML, Javascript, JSF and JSF Tag Libraries.
+<a href="">DevEnv Template for JSF</a> We use to test out some complex UI features where they were difficult to develop with many legacy concepts.</p>
+<h4 id="javascripthtmlgroovy">
+  Javascript/HTML/Groovy
+  <a class="anchor" href="#javascripthtmlgroovy">#</a>
+</h4>
+<p>The User Interface is also developed to support Dynamic Business Logic using Groovy thus allowing Telstra to customise the business rules without rebuilding Modini.</p>
+<h3 id="back-end-technologies">
+  Back End Technologies
+  <a class="anchor" href="#back-end-technologies">#</a>
+</h3>
+<h4 id="j2ee---jboss-eap-running-a-standalone-deployment-and-proof-of-concept-load-balancing-deployment">
+  J2EE - JBoss EAP running a standalone deployment and proof of concept Load Balancing deployment
+  <a class="anchor" href="#j2ee---jboss-eap-running-a-standalone-deployment-and-proof-of-concept-load-balancing-deployment">#</a>
+</h4>
+<ul>
+<li><a href="">DevEnv Template for JBoss EAP 6.3 StandAlone</a> We use to understand how JBoss is setup and configure for the development.</li>
+<li><a href="">DevEnv Template for JBoss EAP 6.3 and 7.x StandAlone with Load Balance DevEnv</a> We develop the concept to guard against the performance issues. We run many standalone instances and depoy F5 LB to schedule session infinity load balance. We find that the approach is simple (KISS) comparing to the recommended JBoss Cluster. The hardware is an Out Of Life HP Blade with many CPU/Thread running Solaris 10 without Zone or Solaris Container.</li>
+<li><a href="">DevEnv Template for JBoss EAP 7.x Cluster DevEnv</a> We develop the LB concept based on the Redhat recommendation but we know that Cluster can be complex when one node or more nodes in the Cluster do not operate.</li>
+</ul>
+<h4 id="engineering-the-development-to-ensure-the-backward-compatability-to-the-existing-legacy-and-forward-compatability-to-the-new-way-of-working">
+  Engineering the development to ensure the backward compatability to the existing legacy and forward compatability to the new way of working,
+  <a class="anchor" href="#engineering-the-development-to-ensure-the-backward-compatability-to-the-existing-legacy-and-forward-compatability-to-the-new-way-of-working">#</a>
+</h4>
+<ul>
+<li>Remote Home Location Reference Model &amp; Paradigm  Home Location Paradigm to support 3G and 4G Mobile services  Support/Maintain backward compatability</li>
+<li>CDB Reference Model &amp; ParadigmCDB to support 4G-&gt;5G and 5G SA: Support/Maintain forward compatability - enhancement is carefully considered to ensure the backward legacy and forward compatability.</li>
+</ul>
+<h4 id="other-interfaces-to-be-considered-during-the-development">
+  Other interfaces to be considered during the development
+  <a class="anchor" href="#other-interfaces-to-be-considered-during-the-development">#</a>
+</h4>
+<ul>
+<li>SOAP/WSDL Interfaces to Mediator resulting in three or four complex schema changes and code generation developed to the modini</li>
+<li>JMS Interface to Mediator</li>
+<li>Command Line Interface to Mediator</li>
+</ul>
+<p><strong>Looking back: We wonder about the achievement: &ldquo;To engineer, develop and deploy four releases to Telstra without any patch i.e. without any defects / To engineer, develop and deploy the solution to support  backward and forward compatability / To engineer, develop and deploy the solution to support two reference models and paradigms to a legacy solution just from reading more 10 years old code and technologies - What a Miracle and What a Team!&rdquo;</strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#project-team">Project Team</a></li>
+    <li><a href="#technologies">Technologies</a>
+      <ul>
+        <li><a href="#front-end-technologies">Front End Technologies</a></li>
+        <li><a href="#back-end-technologies">Back End Technologies</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

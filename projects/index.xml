@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on The IT Service github.io</title>
+    <link>https://henrynguyenattheitservice.github.io/projects/</link>
+    <description>Recent content in Projects on The IT Service github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 Jun 2023 09:11:16 +1000</lastBuildDate><atom:link href="https://henrynguyenattheitservice.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android application used to Commission, Provision and Diagnostic operations on the Battery meters using USB</title>
+      <link>https://henrynguyenattheitservice.github.io/projects/android/usb/</link>
+      <pubDate>Tue, 27 Jun 2023 09:11:16 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/projects/android/usb/</guid>
+      <description>Introduction # Developed the Local Craft Terminal application to perform automatic Commission, Provision and Diagnostic operations on the battery charging to military devices using the Android/Java to interface and interoperate with the Firmware/C via USB and Javolution (Java to C Parser and Formatter).
+Project Team # Duration ~2-3 months 1 x System Architect Document requirements and specifications Provide guidance to Firmware Developers and Testers 2 x Senior Firmware Engineer was responsible Developed firmware for the digital meter using CoAP/LwM2M/IPSO Developed firmware for interface with the android 1 x Senior Software Engineer was responsible for the Proof of Concept release Set up the Development Environment for USB using Android Phone with 6 ports or 8 ports Battery Management devices Set up the Development Environment to work with raw USB device to charge and possible process data at USB Type 3/10 Mbps.</description>
+    </item>
+    
+    <item>
+      <title>AWS MQTT and Cognito</title>
+      <link>https://henrynguyenattheitservice.github.io/projects/android/aws-mqtt/</link>
+      <pubDate>Tue, 27 Jun 2023 09:11:16 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/projects/android/aws-mqtt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LSI AI Scanning System</title>
+      <link>https://henrynguyenattheitservice.github.io/projects/cpp/lsiscan/</link>
+      <pubDate>Thu, 15 Jun 2023 14:09:12 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/projects/cpp/lsiscan/</guid>
+      <description>Introduction # Enhanced the Parcel Scanning research result for Melbourne University and Collaboration with Melbourne University Consortium, Extel Technologies and LSI. The Parcel Scanning research hypothesize into the Artificial Intelligence by training the digital scan to detect organic material to be trained to detect drugs and metal material to be trained to detect gun and explosion. The enhancement comprised of turning the research result into the commercial product including proving the result was correct with better technique</description>
+    </item>
+    
+    <item>
+      <title>Iotwithgpsandsensors</title>
+      <link>https://henrynguyenattheitservice.github.io/projects/java/iotwithgpsandsensors/</link>
+      <pubDate>Thu, 15 Jun 2023 09:02:26 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/projects/java/iotwithgpsandsensors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sommetrics</title>
+      <link>https://henrynguyenattheitservice.github.io/projects/java/sommetrics/</link>
+      <pubDate>Thu, 15 Jun 2023 09:02:26 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/projects/java/sommetrics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vha_ph2</title>
+      <link>https://henrynguyenattheitservice.github.io/projects/java/vha_ph2/</link>
+      <pubDate>Thu, 15 Jun 2023 09:02:26 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/projects/java/vha_ph2/</guid>
+      <description> Introduction # Unico-&amp;gt;CGI developed and deployed VHA to TPG to support Phase-1 Prepaid mobile service and then extend the support to Phase-2 Postpaid mobile.
+Project Team # Duration ~2-3 months and 4 production releases 1 x Project Manager 1 x System Architect was responsible Document requirements and specifications Provide guidance to Developers and Testers Interact with TPG and Matrixx Expert to acquire requirements and specifications and to provide technical support to TPG 1 x Senior and 1 x Experience Java Developer was responsible the Phase-1 Prepaid development 1 x Senior Java Developer was responsible the Phase-1 Postpaid responsible for Learning the Phase-1 Prepaid solution and develop Phase-2 Postpaid solution from the Experience Java Developer Set up the Development Environment with Oracle Database running as docker Fixing defects from Phase-1 to study the Prepaid migration solution Develop the Subscriber Loader, Filter, Batch Manager and Matrixx Interface components to support the Postpaid migration 2 x Testers 1 x Functional and Integration Tester 1 x Model Support Tester / Production Support Tester Technologies # Oracle Database running using Docker # Spring Boot 2 running as a Batch Job # Red Hat Camel 2 used to transform data through various migration stages # </description>
+    </item>
+    
+    <item>
+      <title>Adsl Element Manager</title>
+      <link>https://henrynguyenattheitservice.github.io/projects/java/adsl-element-manager/</link>
+      <pubDate>Fri, 09 Jun 2023 13:18:19 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/projects/java/adsl-element-manager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android application used to Commission, Provision and Diagnostic operations on the South East Water digital meters using NFC</title>
+      <link>https://henrynguyenattheitservice.github.io/projects/android/nfc/</link>
+      <pubDate>Fri, 09 Jun 2023 13:18:19 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/projects/android/nfc/</guid>
+      <description>Introduction # Developed the Local Craft Terminal application to perform Commission, Provision and Diagnostic operations on the South East Water digital meters using the Android/Java to interface and interoperate with the Firmware/C via NFC sensor and Javolution (Java to C Parser and Formatter).
+Project Team # Duration ~2-3 months and 3 production releases 1 x Program Manager / 1 x Project Manager 1 x Senior Firmware Engineer was responsible Document requirements and specifications Provide guidance to Firmware Developers and Testers 2 x Senior Firmware Engineer was responsible Developed firmware for the digital meter using CoAP/LwM2M/IPSO Developed firmware for interface with the android 1 x Senior Software Engineer was responsible for 3 production releases Set up the Development Environment for NFC using Android Phone with NFC built in and NFC sensor tag Set up the Development Environment for the Android to interface with the Firmware using Javolution (open source used to format the Java to C/CPP and parse C/CPP to Java) Set up the Development Environment for the Android to engineer with Internationalisation with Locale support - UI strings, info/warns/error codes and messages are stored to values/strings Android update to date structure and releases to support latest android (I just finished reworking on the porting the sew-lct application to the latest android structure from v4/v7 to androidx at the time write this article) The User Interface and Usability was engineered with the knowledge when I worked at the Telecom Research Lab to engineer simple UI and deterministic usability to work on 5-6 inch screen, water/unclean environment and NFC only works with deterministic stable field by tapping Base Menu Ultrasonic Menu Cathodic Menu Pressure Menu Work with the Firmware Team to develop the simple protocol to transport the model for local craft terminal application the digital meter firmware.</description>
+    </item>
+    
+    <item>
+      <title>Iot Aws Service</title>
+      <link>https://henrynguyenattheitservice.github.io/projects/java/iot-aws-service/</link>
+      <pubDate>Fri, 09 Jun 2023 13:18:19 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/projects/java/iot-aws-service/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modini Project</title>
+      <link>https://henrynguyenattheitservice.github.io/projects/java/modini/</link>
+      <pubDate>Fri, 09 Jun 2023 13:18:19 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/projects/java/modini/</guid>
+      <description>Introduction # Unico-&amp;gt;CGI developed and deployed Modini to Telstra to support 3G and 4G Mobile services more than 10 years ago.
+Recently Telstra deploy 4G-&amp;gt;5G and 5G Stand Alone Mobile services and Modini is extended to support the 4G-&amp;gt;5G and 5G Stand Alone.
+The projects was planned into four releases together with fixing some critical and major defects.
+Project Team # Duration ~6-8 months and 4 production releases 1 x Project Manager 1 x System Architect was responsible Document the 4G-&amp;gt;5G and 5G SA requirements and specifications Provide guidance to Developers and Testers Interact with Telstra Subject Mater Expert to acquire requirements and specifications and to provide technical support to Telstra 1 x Senior Java Developer was responsible Work with the System Architect and Testers to analyze the requirements and specifications Study the current solution from the source code and technologies in the Dev, Test and Production.</description>
+    </item>
+    
+    <item>
+      <title>Sew Leshan</title>
+      <link>https://henrynguyenattheitservice.github.io/projects/java/sew-leshan/</link>
+      <pubDate>Fri, 09 Jun 2023 13:18:19 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/projects/java/sew-leshan/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
