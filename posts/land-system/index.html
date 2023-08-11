@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Disclaimer: The User Requirements Specification documentation is broken down into two parts to remove the unambiguous in the Requirements and the Specification:
-User-requirements means the user document the requirements without any implementation intention, e.g. the user document to build a house with four windows and a door. User-specification means the user document the requirements to be implemented with specification, e.g the user document to build a house for human to live with a door specified by the manufacture and four windows specified by the manufacture.">
+User-requirements means the user document the requirements without any implementation intention, e.g. the user document to build a house with four windows and a door.
+User-specification means the user document the requirements to be implemented with specification, e.g the user document to build a house for human to live with a door specified by the manufacture and four windows specified by the manufacture.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Land System" />
 <meta property="og:description" content="Disclaimer: The User Requirements Specification documentation is broken down into two parts to remove the unambiguous in the Requirements and the Specification:
-User-requirements means the user document the requirements without any implementation intention, e.g. the user document to build a house with four windows and a door. User-specification means the user document the requirements to be implemented with specification, e.g the user document to build a house for human to live with a door specified by the manufacture and four windows specified by the manufacture." />
+User-requirements means the user document the requirements without any implementation intention, e.g. the user document to build a house with four windows and a door.
+User-specification means the user document the requirements to be implemented with specification, e.g the user document to build a house for human to live with a door specified by the manufacture and four windows specified by the manufacture." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://henrynguyenattheitservice.github.io/posts/land-system/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-08-11T09:38:49+10:00" />
@@ -19,7 +21,7 @@ User-requirements means the user document the requirements without any implement
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.9f5f7c626dac3347cffb328a9b507ef577ccef5bfeae3ecf48928d4ba5ca35d6.js" integrity="sha256-n198Ym2sM0fP&#43;zKKm1B&#43;9XfM71v&#43;rj7PSJKNS6XKNdY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a17bcd6921ef7bc19cf9194ac3bedc0f634be13d349b46f04e5a43debfd9c630.js" integrity="sha256-oXvNaSHve8Gc&#43;RlKw77cD2NL4T00m0bwTlpD3r/ZxjA=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -167,29 +169,41 @@ https://github.com/alex-shpak/hugo-book
 <p>Disclaimer:
 The User Requirements Specification documentation is broken down into two parts to remove the unambiguous in the Requirements and the Specification:</p>
 <ul>
-<li>User-requirements means the user document the requirements without any implementation intention, e.g. the user document to build a house with four windows and a door.</li>
-<li>User-specification means the user document the requirements to be implemented with specification, e.g the user document to build a house for human to live with a door specified by the manufacture and four windows specified by the manufacture. Specification imposes the implementation constraints.
-Here is a possible system design solution with the following user-specifications and assumptions to be validated and invalidated:</li>
-<li>Architecture is based on the TCP/UDP with IP architecture
+<li>
+<p>User-requirements means the user document the requirements without any implementation intention, e.g. the user document to build a house with four windows and a door.</p>
+</li>
+<li>
+<p>User-specification means the user document the requirements to be implemented with specification, e.g the user document to build a house for human to live with a door specified by the manufacture and four windows specified by the manufacture. Specification imposes the implementation constraints.
+Here is a possible system design solution with the following user-specifications and assumptions to be validated and invalidated:</p>
+</li>
+<li>
+<p>Architecture is based on the TCP/UDP with IP architecture
 <img src="../../static/images/land/Land-HA-Hardware.png" alt="Land-HA-Hardware.png" />
-Here is a possible system design solution with the following assumptions to be validated and invalidated:</li>
-<li>Architecture is based on the Data Distributed System (DDS). Please note that I still use the word Architecture here as DDS as it is the standard and solution widely used in the defence system development.
+Here is a possible system design solution with the following assumptions to be validated and invalidated:</p>
+</li>
+<li>
+<p>Architecture is based on the Data Distributed System (DDS). Please note that I still use the word Architecture here as DDS as it is the standard and solution widely used in the defence system development.
 &ldquo;A Distributed Data System (DDS) is a system that allows data to be exchanged among different applications or devices in a network using a publish-subscribe pattern. DDS has a standard protocol and API defined by the Object Management Group (OMG), which specifies the communication semantics and quality of service for data-centric connectivity¹³. DDS also follows the standards for data management and interchange set by the ISO/IEC JTC 1/SC 32, which aim to promote harmonization of data facilities across different domains&rdquo;.
 RTI, Vortex and eProsima are three vendors that offer implementations of the DDS standard. RTI and Vortex are commercial vendors, while eProsima offers both commercial and open source solutions. eProsima Fast DDS (formerly known as Fast RTPS) is an open source implementation of the OMG DDS that claims to be faster and easier to use than other implementations¹. However, there may be some compatibility issues between eProsima Fast DDS and RTI Connext DDS, as they use different versions of the DDSI-RTPS protocol²³. eProsima also develops other products such as eProsima RPC for DDS, which is a remote procedure call framework based on DDS⁴.
 (1) DDS - eProsima. <a href="https://eprosima.com/index.php/resources-all/whitepapers/dds">https://eprosima.com/index.php/resources-all/whitepapers/dds</a>.
 (2) RTI pub/subs are not able to communicate with eProsima FastDDS pub/subs. <a href="https://community.rti.com/forum-topic/rti-pubsubs-are-not-able-communicate-eprosima-fastdds-pubsubs">https://community.rti.com/forum-topic/rti-pubsubs-are-not-able-communicate-eprosima-fastdds-pubsubs</a>.
 (3) Compilibility of eProsima FastDDS and RTI Context DDS [10768 &hellip; - GitHub. https://github.com/eProsima/Fast-DDS/issues/1809.
-(4) eProsima | Data Distribution Service (DDS) Community RTI Connext Users. https://community.rti.com/partners/eprosima.
-Source: Conversation with Bing, 11/08/2023
-(1) Data Distribution Service - Wikipedia. https://en.wikipedia.org/wiki/Data_Distribution_Service.
-(2) What is DDS?. https://www.dds-foundation.org/what-is-dds-3/.
-(3) About the Data Distribution Service Specification Version 1.4. https://www.omg.org/spec/DDS/1.4/About-DDS/.
-(4) ISO/IEC JTC 1/SC 32 - Data management and interchange. https://www.iso.org/committee/45342.html.
-I have developed a Proof Of Concept to research into the embedded software development with Yocto with running Vortex DDS @ ADLINK Tech.</li>
-<li>Special thank and acknowledge the assistance to the Sale Engineer and Technical Support at ADLINK.</li>
-<li>I could not acquire the RTI DDS software @ RTI and eProsima DDS to test out the concept.
-In general, I would like to test out:</li>
-<li>Yocto/Openembedded OS image with the running Docker tested on the RaspberryPI and Intel Development Board (I did test out initially but unfortunately had to abandon as runing out of time)
+(4) eProsima | Data Distribution Service (DDS) Community RTI Connext Users. https://community.rti.com/partners/eprosima.</p>
+<p>(1) Data Distribution Service - Wikipedia. <a href="https://en.wikipedia.org/wiki/Data_Distribution_Service">https://en.wikipedia.org/wiki/Data_Distribution_Service</a>.
+(2) What is DDS?. <a href="https://www.dds-foundation.org/what-is-dds-3/">https://www.dds-foundation.org/what-is-dds-3/</a>.
+(3) About the Data Distribution Service Specification Version 1.4. <a href="https://www.omg.org/spec/DDS/1.4/About-DDS/">https://www.omg.org/spec/DDS/1.4/About-DDS/</a>.
+(4) ISO/IEC JTC 1/SC 32 - Data management and interchange. <a href="https://www.iso.org/committee/45342.html">https://www.iso.org/committee/45342.html</a>.
+I have developed a Proof Of Concept to research into the embedded software development with Yocto with running Vortex DDS @ ADLINK Tech.</p>
+</li>
+<li>
+<p>Special thank and acknowledge the assistance to the Sale Engineer and Technical Support at ADLINK.</p>
+</li>
+<li>
+<p>I could not acquire the RTI DDS software @ RTI and eProsima DDS to test out the concept.
+In general, I would like to test out:</p>
+</li>
+<li>
+<p>Yocto/Openembedded OS image with the running Docker tested on the RaspberryPI and Intel Development Board (I did test out initially but unfortunately had to abandon as runing out of time)</p>
 <ul>
 <li>OS image running on read only file system to test out the concept where the system will never be bricked.</li>
 <li>Docker running the Application to support IP Camera and IP Console - the Docker application software can be developed with the Cross Compilation and continuously develop and integrate with many releases.</li>
@@ -202,6 +216,23 @@ The objective of OS that never-bricked the system as it runs on the read-only fi
 <p>And finally all the OS and Docker software packages are still maintained in two banks of memory to support the traditional firmware development, thus we upgrade both OS and application if required.</p>
 <p>I apply the Data-Centre Operation Administration  and Maintenance (OAM) on the OS upgrade and Application upgrade to the Firmware OAM.
 <img src="../../static/images/land/Land-HA-OS-Docker-Target.png" alt="Land-HA-OS-Docker-Target.png" /></p>
+<p>Disclaimer: I do use AI e.g. Bing or AI find out more about ATAK, Mesh-Nework, Low-Orbit Satellite and Drone. Some notes on ATAK and Mesh-Network: I had Government Clearance but do NOT have Defence Clearance thus it is difficult to access to the ATAK and Mesh-Network.
+Research into the CB Radio without licence may be illegal as well thus I do NOT have any chance to work on the technology.</p>
+<p>&ldquo;ATAK android CB radio&rdquo; and &ldquo;CB radio android app&rdquo; and found some results that might help you. <strong>ATAK</strong> is an Android app that allows for geospatial and situational awareness¹. To connect it to a <strong>CB radio</strong>, you may need a special cable or adapter that can plug into your phone&rsquo;s audio jack or USB port². Alternatively, you can use a <strong>CB radio app</strong> on your phone that can simulate the CB radio functionality over the internet⁵⁶⁷⁸. However, these apps may not be compatible with ATAK or other CB radios, and they may require an internet connection to work. You can check the app descriptions and reviews for more details.</p>
+<p>(1) Android Team Awareness Kit or ATAK / CivTAK - CivTAK / ATAK. <a href="https://www.civtak.org/atak-about/">https://www.civtak.org/atak-about/</a>.
+(2) Connecting to a radio : r/ATAK - Reddit. <a href="https://www.reddit.com/r/ATAK/comments/l5rbtt/connecting_to_a_radio/">https://www.reddit.com/r/ATAK/comments/l5rbtt/connecting_to_a_radio/</a>.
+(3) Best free CB radio apps for Android- that’s you are looking for!. <a href="https://myradiolab.com/best-free-cb-radio-apps/">https://myradiolab.com/best-free-cb-radio-apps/</a>.
+(4) CB Radio Chat - for friends! - Apps on Google Play. <a href="https://play.google.com/store/apps/details?id=com.plugmind.cbtest">https://play.google.com/store/apps/details?id=com.plugmind.cbtest</a>.
+(5) 6 Best &amp; Free CB Radio Apps for Android &amp; iPhones - xRoadGPS. <a href="https://xroadgps.com/trucker-cb-radio-apps/">https://xroadgps.com/trucker-cb-radio-apps/</a>.
+(6) Blitz CB Radios - Apps on Google Play. <a href="https://play.google.com/store/apps/details?id=com.app.blitzcbradios">https://play.google.com/store/apps/details?id=com.app.blitzcbradios</a>.
+(7) using a combo radio/android as an ATAK host? : r/ATAK - Reddit. <a href="https://www.reddit.com/r/ATAK/comments/pget22/using_a_combo_radioandroid_as_an_atak_host/">https://www.reddit.com/r/ATAK/comments/pget22/using_a_combo_radioandroid_as_an_atak_host/</a>.
+(8) What is ATAK? (WITH PICTURES!) - Tactical Blueprint. <a href="https://tacticalblueprint.com/what-is-atak/">https://tacticalblueprint.com/what-is-atak/</a>.</p>
+<p>Scramble is a process of encrypting or distorting a radio signal to make it unintelligible to unauthorized listeners. Scramble can be used to enhance the privacy and security of a radio communication, especially in situations where sensitive or confidential information is exchanged234.</p>
+<p>There are different ways to scramble a CB Radio signal, such as:</p>
+<p>CTCSS: CTCSS stands for Continuous Tone-Coded Squelch System, which is a method of adding a low-frequency tone to a radio signal. The tone acts as a sub-channel or a code that only radios with the same tone can receive. CTCSS can reduce interference and noise from other users on the same channel, but it does not prevent eavesdropping by radios with scanners or tone decoders54.
+Scrambler: Scrambler is a device or a feature that modifies the voice or data of a radio signal using an algorithm or a key. The scrambled signal can only be decoded by radios with the same scrambler or the same key. Scrambler can provide more effective encryption and protection than CTCSS, but it may also reduce the quality and clarity of the communication234.
+These are some of the examples of CB Radio scramble.</p>
+<p>A mesh network is a type of wireless network that connects multiple devices or nodes without relying on a central router or server. Each node can relay data to other nodes, creating a flexible and resilient network that can adapt to changing conditions. Mesh networks can be used to facilitate cross-domain tactical communications for land vehicles, such as tanks, armoured personnel carriers, or unmanned ground vehicles12. They can also interface with other domains, such as air or sea, using technologies like 5G mmWave systems1 or Rajant Kinetic Mesh3. These technologies can provide high-speed, low-latency, and secure communications for land vehicles in various scenarios.</p>
 </article>
  
       
