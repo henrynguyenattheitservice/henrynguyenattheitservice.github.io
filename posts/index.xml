@@ -6,7 +6,17 @@
     <description>Recent content in Blog on The IT Service github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Jul 2023 18:06:01 +1000</lastBuildDate><atom:link href="https://henrynguyenattheitservice.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Aug 2023 09:38:49 +1000</lastBuildDate><atom:link href="https://henrynguyenattheitservice.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Land System</title>
+      <link>https://henrynguyenattheitservice.github.io/posts/land-system/</link>
+      <pubDate>Fri, 11 Aug 2023 09:38:49 +1000</pubDate>
+      
+      <guid>https://henrynguyenattheitservice.github.io/posts/land-system/</guid>
+      <description>Disclaimer: The User Requirements Specification documentation is broken down into two parts to remove the unambiguous in the Requirements and the Specification:
+User-requirements means the user document the requirements without any implementation intention, e.g. the user document to build a house with four windows and a door. User-specification means the user document the requirements to be implemented with specification, e.g the user document to build a house for human to live with a door specified by the manufacture and four windows specified by the manufacture.</description>
+    </item>
+    
     <item>
       <title>Temporal Skill</title>
       <link>https://henrynguyenattheitservice.github.io/posts/temporalskill/</link>
@@ -135,7 +145,8 @@ GoLand with Git Servers: to connect to Git Server,GitLab Server, Bitbucket and G
       <pubDate>Tue, 16 May 2023 14:30:31 +1000</pubDate>
       
       <guid>https://henrynguyenattheitservice.github.io/posts/3-holy-trinities/</guid>
-      <description> Architecture # TMN &amp;amp; CCiTT # SNMP &amp;amp; IETF # CoAP/LwM2M/IPSO &amp;amp; OMA # Any Architectures with Business Logic to be implemented using Finite State Machine # Event Driven Architecture # Monolithic Architecture # Domain Driven Architecture # Hexagon Driven Architecture # Data and Business Logic Modelling # TMN &amp;amp; CCiTT with M3xxxx-MIB # SNMP &amp;amp; IETF with RFC-MIB # OMA with IPSO for LwM2M and IPSO for Business Logic # Methodology # Process # Development Environment &amp;amp; Tools # DevOps Environment &amp;amp; Tools # CICD Tools # </description>
+      <description>The term “three holy trinities” can refer to different concepts depending on the context. One possible meaning is the Christian doctrine of the Trinity, which is the belief that God is one being in three persons: Father, Son, and Holy Spirit. My software development doctrine is based on the “three holy trinities” of Architecture, Data to Information Modelling, and Methodology.
+Architecture defines how all components interact through well-defined protocols. Data to Information Modelling describes the data or information used or produced by the components.</description>
     </item>
     
     <item>
